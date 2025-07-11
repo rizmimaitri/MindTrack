@@ -96,7 +96,7 @@ if st.button("Daftar"):
         st.success(f"Pendaftaran berhasil! Selamat datang, {st.session_state.nama_panggilan} 🎉")
 
 
-                st.button("⬅️ Kembali", on_click=lambda: st.session_state.update({"halaman": "awal"}))
+    st.button("⬅️ Kembali", on_click=lambda: st.session_state.update({"halaman": "awal"}))
 
     else:
         st.success(f"Halo, {st.session_state.nama_panggilan}! 👋")
