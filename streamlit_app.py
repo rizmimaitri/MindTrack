@@ -71,23 +71,30 @@ if menu == "Beranda":
             nim = st.text_input("NIM")
             password = st.text_input("Password", type="password")
 
-            if st.button("Daftar"):
-                if nama_lengkap.strip() == "" or nim.strip() == "" or password.strip() == "":
-                    st.warning("Nama lengkap, NIM, dan password wajib diisi.")
-                elif nama_lengkap in users_df["nama_lengkap"].values:
-                    st.warning("Nama sudah terdaftar. Silakan masuk.")
-                    st.session_state.halaman = "login"
-                else:
-                    new_data = pd.DataFrame([{
-                        "nama_lengkap": nama_lengkap,
-                        "nama_panggilan": nama_panggilan if nama_panggilan.strip() else nama_lengkap.split()[0],
-                        "nim": nim,
-                        "password": password
-                    }])
-                    new_df = pd.concat([users_df, new_data], ignore_index=True)
-                    new_df.to_csv("users.csv", index=False)
-                    st.success("Pendaftaran berhasil! Silakan login.")
-                    st.session_state.halaman = "login"
+if st.button("Daftar"):
+    if nama_lengkap.strip() == "" or nim.strip() == "" or password.strip() == "":
+        st.warning("Nama lengkap, NIM, dan password wajib diisi.")
+    elif nama_lengkap in users_df["nama_lengkap"].values:
+        st.warning("Nama sudah terdaftar. Silakan masuk.")
+        st.session_state.halaman = "login"
+    else:
+        # Simpan data user baru
+        new_data = pd.DataFrame([{
+            "nama_lengkap": nama_lengkap,
+            "nama_panggilan": nama_panggilan if nama_panggilan.strip() else nama_lengkap.split()[0],
+            "nim": nim,
+            "password": password
+        }])
+        new_df = pd.concat([users_df, new_data], ignore_index=True)
+        new_df.to_csv("users.csv", index=False)
+
+        # Langsung login otomatis
+        st.session_state.is_logged_in = True
+        st.session_state.nama_lengkap = nama_lengkap
+        st.session_state.nama_panggilan = nama_panggilan if nama_panggilan.strip() else nama_lengkap.split()[0]
+        st.session_state.nim = nim
+        st.success(f"Pendaftaran berhasil! Selamat datang, {st.session_state.nama_panggilan} 🎉")
+
 
             st.button("⬅️ Kembali", on_click=lambda: st.session_state.update({"halaman": "awal"}))
 
