@@ -75,7 +75,7 @@ if menu == "Beranda":
             st.button("Sudah punya akun? Masuk", on_click=lambda: st.session_state.update({"halaman": "login"}))
 
     else:
-        st.success(f"Halo, Selamat Datang Di MindTrack {st.session_state.nama_panggilan}! 👋")
+        st.success(f"Halo, {st.session_state.nama_panggilan}! 👋")
         st.info("Gunakan menu di sebelah kiri untuk mulai belajar.")
 
 # Halaman Latihan Soal
