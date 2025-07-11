@@ -130,9 +130,40 @@ elif menu == "Latihan Soal":
 # Halaman Catatan Kuliah
 elif menu == "Catatan Kuliah":
     st.title("📒 Catatan Kuliah")
-    st.write("Berisi kumpulan catatan kuliah dari berbagai mata kuliah.")
-    if not st.session_state.is_logged_in:
-        st.warning("Anda harus login untuk mengakses halaman ini.")
+
+    # Load data catatan dari CSV
+    def load_catatan():
+        try:
+            df = pd.read_csv("catatan.csv")
+            return df
+        except:
+            return pd.DataFrame(columns=["judul", "matkul", "isi"])
+
+    df_catatan = load_catatan()
+
+    if df_catatan.empty:
+        st.info("Belum ada catatan kuliah.")
+    else:
+        matkul_list = df_catatan["matkul"].unique().tolist()
+        matkul_terpilih = st.selectbox("📘 Pilih Mata Kuliah", matkul_list)
+
+        # Filter berdasarkan matkul yang dipilih
+        df_filtered = df_catatan[df_catatan["matkul"] == matkul_terpilih]
+
+        # Kolom pencarian
+        keyword = st.text_input("🔍 Cari Judul Catatan")
+
+        if keyword:
+            df_filtered = df_filtered[df_filtered["judul"].str.contains(keyword, case=False)]
+
+        # Tampilkan daftar catatan
+        if df_filtered.empty:
+            st.warning("Tidak ditemukan catatan dengan judul tersebut.")
+        else:
+            for index, row in df_filtered.iterrows():
+                with st.expander(f"📄 {row['judul']}"):
+                    st.write(row['isi'])
+
 
 # Halaman Riwayat Jawaban
 elif menu == "Riwayat Jawaban":
