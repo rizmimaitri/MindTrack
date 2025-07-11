@@ -1,11 +1,12 @@
+import streamlit as st
+
+st.set_page_config(page_title="MindTrack", page_icon="🧠")
+
+st.title("🧠 MindTrack")
+st.write("Selamat datang di platform latihan soal & catatan kuliah!")
+
 # Sidebar menu
 menu = st.sidebar.selectbox("📚 Pilih Halaman", ["Beranda", "Latihan Soal", "Catatan Kuliah", "Riwayat Jawaban", "Tentang"])
-
-# Halaman Beranda
-if menu == "Beranda":
-    st.title("🧠 MindTrack")
-    st.write("Selamat datang di platform latihan soal dan catatan kuliah!")
-    st.info("Gunakan menu di sebelah kiri untuk mulai belajar.")
 
 # Halaman Latihan Soal
 elif menu == "Latihan Soal":
