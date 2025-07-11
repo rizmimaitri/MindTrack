@@ -8,8 +8,24 @@ menu = st.sidebar.selectbox("📚 Pilih Halaman", ["Beranda", "Latihan Soal", "C
 # Halaman Beranda
 if menu == "Beranda":
     st.title("🧠 MindTrack")
-    st.write("Selamat datang di platform latihan soal dan catatan kuliah!")
-    st.info("Gunakan menu di sebelah kiri untuk mulai belajar.")
+
+    # Cek apakah user sudah login
+    if "is_logged_in" not in st.session_state:
+        st.session_state.is_logged_in = False
+
+    if not st.session_state.is_logged_in:
+        st.subheader("🔐 Silakan Login")
+        username = st.text_input("Nama kamu")
+        if st.button("Login"):
+            if username.strip() != "":
+                st.session_state.is_logged_in = True
+                st.session_state.username = username
+                st.success(f"Halo, {username}! Kamu berhasil login.")
+            else:
+                st.warning("Nama tidak boleh kosong.")
+    else:
+        st.success(f"Halo, {st.session_state.username}! 👋")
+        st.info("Gunakan menu di sebelah kiri untuk mulai belajar.")
 
 # Halaman Latihan Soal
 elif menu == "Latihan Soal":
