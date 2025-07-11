@@ -11,8 +11,9 @@ import pandas as pd
 if menu == "Beranda":
     st.title("🧠 MindTrack")
 
+    # Inisialisasi session state
     if "halaman" not in st.session_state:
-        st.session_state.halaman = "login"
+        st.session_state.halaman = "awal"
     if "is_logged_in" not in st.session_state:
         st.session_state.is_logged_in = False
 
@@ -27,14 +28,27 @@ if menu == "Beranda":
 
     if not st.session_state.is_logged_in:
 
-        if st.session_state.halaman == "login":
-            st.subheader("🔐 Masuk")
+        # Halaman awal dengan pilihan Masuk / Daftar
+        if st.session_state.halaman == "awal":
+            st.write("Halo! Selamat datang di **MindTrack**, platform latihan soal dan catatan kuliah 👋")
+            st.write("Silakan pilih salah satu opsi di bawah:")
+            col1, col2 = st.columns(2)
+            with col1:
+                if st.button("🔐 Masuk"):
+                    st.session_state.halaman = "login"
+            with col2:
+                if st.button("📝 Daftar"):
+                    st.session_state.halaman = "daftar"
+
+        # Halaman Login
+        elif st.session_state.halaman == "login":
+            st.subheader("🔐 Masuk ke Akun")
             nama_login = st.text_input("Nama Lengkap")
             password_login = st.text_input("Password", type="password")
 
             if st.button("Masuk"):
                 user_match = users_df[
-                    (users_df["nama_lengkap"] == nama_login) & 
+                    (users_df["nama_lengkap"] == nama_login) &
                     (users_df["password"] == password_login)
                 ]
                 if not user_match.empty:
@@ -44,9 +58,12 @@ if menu == "Beranda":
                     st.session_state.nim = user_match.iloc[0]["nim"]
                     st.success(f"Halo, {st.session_state.nama_panggilan}! Kamu berhasil login.")
                 else:
-                    st.warning("Akun tidak ditemukan. Silakan daftar terlebih dahulu.")
+                    st.warning("Akun tidak ditemukan. Ayo daftar dulu yuk!")
                     st.session_state.halaman = "daftar"
 
+            st.button("⬅️ Kembali", on_click=lambda: st.session_state.update({"halaman": "awal"}))
+
+        # Halaman Pendaftaran
         elif st.session_state.halaman == "daftar":
             st.subheader("📝 Daftar Akun Baru")
             nama_lengkap = st.text_input("Nama Lengkap")
@@ -58,7 +75,7 @@ if menu == "Beranda":
                 if nama_lengkap.strip() == "" or nim.strip() == "" or password.strip() == "":
                     st.warning("Nama lengkap, NIM, dan password wajib diisi.")
                 elif nama_lengkap in users_df["nama_lengkap"].values:
-                    st.warning("Nama sudah terdaftar. Silakan login.")
+                    st.warning("Nama sudah terdaftar. Silakan masuk.")
                     st.session_state.halaman = "login"
                 else:
                     new_data = pd.DataFrame([{
@@ -72,7 +89,7 @@ if menu == "Beranda":
                     st.success("Pendaftaran berhasil! Silakan login.")
                     st.session_state.halaman = "login"
 
-            st.button("Sudah punya akun? Masuk", on_click=lambda: st.session_state.update({"halaman": "login"}))
+            st.button("⬅️ Kembali", on_click=lambda: st.session_state.update({"halaman": "awal"}))
 
     else:
         st.success(f"Halo, {st.session_state.nama_panggilan}! 👋")
