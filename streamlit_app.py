@@ -150,7 +150,7 @@ st.info("Belum ada catatan yang ditambahkan.")
 if menu == "Riwayat Jawaban":
     st.title("🗂️ Riwayat Jawaban")
     st.write("Di sini akan ditampilkan jawaban-jawaban soal yang pernah kamu kerjakan.")
-    elif st.session_state.is_logged_in:
+    if not st.session_state.is_logged_in:
          st.warning("Anda harus login untuk mengakses halaman ini.")
 
 # Halaman Tentang
