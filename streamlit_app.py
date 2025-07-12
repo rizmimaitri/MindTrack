@@ -133,6 +133,18 @@ elif menu == "Catatan Kuliah":
         st.warning("Silakan login terlebih dahulu untuk mengakses catatan kuliah.")
     else:
         st.title("📒 Catatan Kuliah")
+# Pilihan tingkat langsung muncul (pakai radio horizontal)
+tingkat = st.radio("Pilih Tingkat", ["Tingkat 1", "Tingkat 2"], horizontal=True)
+
+# Dropdown blok
+blok = st.selectbox("Pilih Blok", ["Blok 1", "Blok 2"])
+
+# Dropdown mata kuliah
+matkul = st.selectbox("Pilih Mata Kuliah", ["Kimia Fisika", "Spektrofotometri", "Biokimia"])
+
+# Menampilkan catatan sesuai pilihan
+st.subheader(f"📘 Catatan untuk {matkul} - {tingkat} {blok}")
+st.info("Belum ada catatan yang ditambahkan.")
 
         # Load data catatan dari CSV
         def load_catatan():
