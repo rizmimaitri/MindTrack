@@ -146,31 +146,6 @@ matkul = st.selectbox("Pilih Mata Kuliah", ["Kimia Fisika", "Spektrofotometri", 
 st.subheader(f"📘 Catatan untuk {matkul} - {tingkat} {blok}")
 st.info("Belum ada catatan yang ditambahkan.")
 
-        # Load data catatan dari CSV
-        def load_catatan():
-            try:
-                df = pd.read_csv("catatan.csv")
-                return df
-            except:
-                return pd.DataFrame(columns=["judul", "matkul", "isi"])
-
-        df_catatan = load_catatan()
-
-        if df_catatan.empty:
-            st.info("Belum ada catatan kuliah.")
-        else:
-            matkul_list = df_catatan["matkul"].unique().tolist()
-            matkul_terpilih = st.selectbox("📘 Pilih Mata Kuliah", matkul_list)
-
-            # Kolom pencarian
-            keyword = st.text_input("🔍 Cari Judul Catatan")
-
-            # Filter berdasarkan matkul dan judul
-            df_filtered = df_catatan[df_catatan["matkul"] == matkul_terpilih]
-            if keyword:
-                df_filtered = df_filtered[df_filtered["judul"].str.contains_]()
-
-
 # Halaman Riwayat Jawaban
 elif menu == "Riwayat Jawaban":
     st.title("🗂️ Riwayat Jawaban")
