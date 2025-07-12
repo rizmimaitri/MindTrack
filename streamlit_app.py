@@ -133,25 +133,25 @@ elif menu == "Catatan Kuliah":
         st.warning("Silakan login terlebih dahulu untuk mengakses catatan kuliah.")
     else:
         st.title("📒 Catatan Kuliah")
-# Pilihan tingkat langsung muncul (pakai radio horizontal)
-tingkat = st.radio("Pilih Tingkat", ["Tingkat 1", "Tingkat 2"], horizontal=True)
+        # Pilihan tingkat langsung muncul (pakai radio horizontal)
+        tingkat = st.radio("Pilih Tingkat", ["Tingkat 1", "Tingkat 2"], horizontal=True)
 
-# Dropdown blok
-blok = st.selectbox("Pilih Blok", ["Blok 1", "Blok 2"])
-
-# Dropdown mata kuliah
-matkul = st.selectbox("Pilih Mata Kuliah", ["Kimia Fisika", "Spektrofotometri", "Biokimia"])
-
-# Menampilkan catatan sesuai pilihan
-st.subheader(f"📘 Catatan untuk {matkul} - {tingkat} {blok}")
-st.info("Belum ada catatan yang ditambahkan.")
-
-# Halaman Riwayat Jawaban
-if menu == "Riwayat Jawaban":
-    st.title("🗂️ Riwayat Jawaban")
-    st.write("Di sini akan ditampilkan jawaban-jawaban soal yang pernah kamu kerjakan.")
-    if not st.session_state.is_logged_in:
-         st.warning("Anda harus login untuk mengakses halaman ini.")
+        # Dropdown blok
+        blok = st.selectbox("Pilih Blok", ["Blok 1", "Blok 2"])
+        
+        # Dropdown mata kuliah
+        matkul = st.selectbox("Pilih Mata Kuliah", ["Kimia Fisika", "Spektrofotometri", "Biokimia"])
+        
+        # Menampilkan catatan sesuai pilihan
+        st.subheader(f"📘 Catatan untuk {matkul} - {tingkat} {blok}")
+        st.info("Belum ada catatan yang ditambahkan.")
+        
+        # Halaman Riwayat Jawaban
+        if menu == "Riwayat Jawaban":
+            st.title("🗂️ Riwayat Jawaban")
+            st.write("Di sini akan ditampilkan jawaban-jawaban soal yang pernah kamu kerjakan.")
+            if not st.session_state.is_logged_in:
+                 st.warning("Anda harus login untuk mengakses halaman ini.")
 
 # Halaman Tentang
 if menu == "Tentang":
