@@ -5,7 +5,7 @@ import pandas as pd
 st.set_page_config(page_title="MindTrack", page_icon="🧠")
 
 # Menu Sidebar
-menu = st.sidebar.selectbox("📚 Pilih Halaman", ["Beranda", "Latihan Soal", "Catatan Kuliah", "Riwayat Jawaban", "Tentang"])
+st.sidebar.selectbox("📚 Pilih Halaman", ["Beranda", "Latihan Soal", "Catatan Kuliah", "Riwayat Jawaban", "Tentang"])
 
 # Halaman Beranda
 if menu == "Beranda":
@@ -147,13 +147,18 @@ st.subheader(f"📘 Catatan untuk {matkul} - {tingkat} {blok}")
 st.info("Belum ada catatan yang ditambahkan.")
 
 # Halaman Riwayat Jawaban
-elif menu == "Riwayat Jawaban":
+if menu == "Riwayat Jawaban":
     st.title("🗂️ Riwayat Jawaban")
     st.write("Di sini akan ditampilkan jawaban-jawaban soal yang pernah kamu kerjakan.")
-    if not st.session_state.is_logged_in:
+    elif st.session_state.is_logged_in:
         st.warning("Anda harus login untuk mengakses halaman ini.")
 
 # Halaman Tentang
-elif menu == "Tentang":
+if menu == "Tentang":
     st.title("ℹ️ Tentang MindTrack")
     st.write("Website ini dibuat untuk latihan soal dan mencatat materi perkuliahan.")
+    st.header("Tentang Pendiri")
+    st.write("Zulfikar Syahid")
+    st.write("Rizmi Maitri Nurgianti")
+    st.write("Nafisah Nailalhusna I.")
+    st.write("Jane Lazarina Bora Isu")
