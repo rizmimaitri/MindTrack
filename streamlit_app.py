@@ -38,7 +38,7 @@ elif menu == "Latihan Soal":
             content = uploaded_file.read().decode("utf-8")
             st.text_area("Isi File:", content, height=300)
 
-if uploaded_file.type == "text/plain":
+        if uploaded_file.type == "text/plain":
             content = uploaded_file.read().decode("utf-8")
             st.text_area("Isi File:", content, height=300)
 
