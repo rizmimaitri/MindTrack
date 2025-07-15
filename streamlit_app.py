@@ -93,6 +93,8 @@ soal_data = {
         {"question": "?", "options": ["", "", "",""], "answer": ""},
         {"question": "?", "options": ["", "", "",""], "answer": ""},
         {"question": "?", "options": ["", "", "",""], "answer": ""},  
+    ]
+}
 
 # Halaman Beranda
 if menu == "Beranda":
