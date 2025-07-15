@@ -9,7 +9,7 @@ menu = st.sidebar.selectbox("📚 Pilih Halaman", ["Beranda", "Latihan Soal", "C
 # Data Soal
 soal_data = {
     "Spektrofotometri": [
-        {"question": "Apa yang dimaksud dengan spektrofotometri?", "options": ["Metode pengukuran massa", "Metode pengukuran cahaya", "Metode pengukuran suhu"], "answer": "Metode pengukuran cahaya"},
+        {"question": "Perbedaan metode analisis secara konvensional dan analisis intrumen adalah sebagai berikut, kecuali ?", "options": ["Metode analisis instrumen digunakan untuk analit dengan konsentrasi rendah, sedangkan metode analisis konvensional digunakan untuk analit konsentrasi tinggi", "Metode analisis instrumen membutuhkan standar sedangkan metode analis konvensional tidak ", "Metode analisis instrumen membutuhkan pemisahan analit secara fisik sedangkan metode analis konvensional tidak ","Metode analisis instrumen memiliki sensitivitas lebih tinggi dengan metode analis konvensional"], "answer": "Metode analisis instrumen membutuhkan pemisahan analit secara fisik sedangkan metode analis konvensional tidak "},
         {"question": "Apa yang diukur dalam spektrofotometri?", "options": ["Konsentrasi", "Volume", "Tekanan"], "answer": "Konsentrasi"},
         {"question": "Apa itu panjang gelombang?", "options": ["Jarak antara dua puncak gelombang", "Jumlah gelombang per detik", "Energi cahaya"], "answer": "Jarak antara dua puncak gelombang"},
         {"question": "Apa yang dimaksud dengan absorbansi?", "options": ["Jumlah cahaya yang diteruskan", "Jumlah cahaya yang diserap", "Jumlah cahaya yang dipantulkan"], "answer": "Jumlah cahaya yang diserap"},
