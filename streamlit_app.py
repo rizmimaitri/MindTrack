@@ -17,23 +17,27 @@ if menu == "Beranda":
 elif menu == "Latihan Soal":
     st.title("✏️ Latihan Soal")
     st.write("Halaman ini nanti akan menampilkan soal-soal dari berbagai mata kuliah.")
+elif menu == "Latihan Soal":
+    st.title("📝 Latihan Soal")
+    st.write("Halaman ini nanti akan menampilkan soal-soal dari berbagai mata kuliah.")
 
-# Form upload file
     uploaded_file = st.file_uploader("Unggah file soal (PDF/DOCX/TXT)", type=["pdf", "docx", "txt"])
     
-if uploaded_file is not None:
-    st.success(f"Berhasil mengunggah: {uploaded_file.name}")
-    file_details = {
+    if uploaded_file is not None:
+        st.success(f"Berhasil mengunggah: {uploaded_file.name}")
+        
+        file_details = {
             "Nama File": uploaded_file.name,
             "Jenis File": uploaded_file.type,
             "Ukuran": f"{uploaded_file.size / 1024:.2f} KB"
         }
-  file_details = {
-    "Nama File": uploaded_file.name,
-    "Jenis File": uploaded_file.type,   # ✅ koma di sini sangat penting
-    "Ukuran": f"{uploaded_file.size / 1024:.2f} KB"
-}
-# Tambahan jika ingin menampilkan isi file .txt (opsional)
+        st.json(file_details)
+
+        # Tampilkan isi file .txt jika diunggah
+        if uploaded_file.type == "text/plain":
+            content = uploaded_file.read().decode("utf-8")
+            st.text_area("Isi File:", content, height=300)
+
 if uploaded_file.type == "text/plain":
             content = uploaded_file.read().decode("utf-8")
             st.text_area("Isi File:", content, height=300)
