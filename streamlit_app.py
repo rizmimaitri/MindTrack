@@ -1,5 +1,4 @@
 import streamlit as st
-import pandas as pd
 
 # Konfigurasi halaman Streamlit
 st.set_page_config(page_title="MindTrack", page_icon="🧠")
@@ -7,74 +6,76 @@ st.set_page_config(page_title="MindTrack", page_icon="🧠")
 # Menu Sidebar
 menu = st.sidebar.selectbox("📚 Pilih Halaman", ["Beranda", "Latihan Soal", "Catatan Kuliah", "Riwayat Jawaban", "Tentang"])
 
+# Data Soal
+soal_data = {
+    "Spektrofotometri": [
+        {
+            "question": "Apa yang dimaksud dengan spektrofotometri?",
+            "options": ["Metode pengukuran massa", "Metode pengukuran cahaya", "Metode pengukuran suhu"],
+            "answer": "Metode pengukuran cahaya"
+        },
+        {
+            "question": "Apa yang diukur dalam spektrofotometri?",
+            "options": ["Konsentrasi", "Volume", "Tekanan"],
+            "answer": "Konsentrasi"
+        }
+    ],
+    "Kimia Fisika": [
+        {
+            "question": "Apa hukum pertama termodinamika?",
+            "options": ["Energi tidak dapat diciptakan atau dimusnahkan", "Energi dapat diciptakan", "Energi selalu meningkat"],
+            "answer": "Energi tidak dapat diciptakan atau dimusnahkan"
+        },
+        {
+            "question": "Apa itu entropi?",
+            "options": ["Ukuran ketidakteraturan", "Ukuran energi", "Ukuran massa"],
+            "answer": "Ukuran ketidakteraturan"
+        }
+    ],
+    "Biokimia": [
+        {
+            "question": "Apa itu enzim?",
+            "options": ["Katalisator biologis", "Zat pewarna", "Zat pengawet"],
+            "answer": "Katalisator biologis"
+        },
+        {
+            "question": "Apa yang dimaksud dengan metabolisme?",
+            "options": ["Proses penguraian makanan", "Proses pembentukan energi", "Proses pengolahan limbah"],
+            "answer": "Proses penguraian makanan"
+        }
+    ]
+}
+
 # Halaman Beranda
 if menu == "Beranda":
     st.title("🧠 MindTrack")
     st.write("Selamat datang di *MindTrack*, platform latihan soal dan catatan kuliah 👋")
     st.info("Gunakan menu di sebelah kiri untuk mulai belajar.")
-    
+
 elif menu == "Latihan Soal":
     st.title("✏ Latihan Soal")
-    
-    # Input untuk membuat folder soal
-    st.subheader("📁 Buat Folder Soal")
-    matkul = st.selectbox("Pilih Mata Kuliah", ["Kimia Fisika", "Spektrofotometri", "Biokimia"])
-    folder_name = st.text_input("Nama Folder Soal")
 
-    if st.button("✅ Buat Folder"):
-        if folder_name:
-            # Simpan folder ke dalam session state
-            if "folders" not in st.session_state:
-                st.session_state.folders = {}
-            if matkul not in st.session_state.folders:
-                st.session_state.folders[matkul] = []
-            st.session_state.folders[matkul].append(folder_name)
-            st.success(f"Folder '{folder_name}' untuk mata kuliah '{matkul}' berhasil dibuat!")
-        else:
-            st.error("Nama folder tidak boleh kosong!")
+    # Pilih Mata Kuliah
+    matkul = st.selectbox("Pilih Mata Kuliah", ["Spektrofotometri", "Kimia Fisika", "Biokimia"])
 
-    # Tampilkan folder yang sudah dibuat
-    st.subheader("📂 Folder Soal yang Sudah Dibuat")
-    if "folders" in st.session_state:
-        for matkul, folders in st.session_state.folders.items():
-            st.write(f"**{matkul}:**")
-            for folder in folders:
-                st.write(f"- {folder}")
-    else:
-        st.write("Belum ada folder yang dibuat.")
-
-    # SOAL 1
-    st.subheader("1. Unsur manakah yang termasuk logam alkali?")
-    jawaban1 = st.radio("Pilih jawaban:", ["Oksigen", "Natrium", "Kalsium", "Klorin"], key="soal1")
-
-    # SOAL 2
-    st.subheader("2. Rumus kimia dari air adalah...")
-    jawaban2 = st.radio("Pilih jawaban:", ["CO2", "NaCl", "H2O", "CH4"], key="soal2")
-
-    # SOAL 3
-    st.subheader("3. Manakah yang merupakan senyawa organik?")
-    jawaban3 = st.multiselect("Pilih semua yang benar:", ["NaCl", "CH4", "C2H6", "H2SO4"], key="soal3")
+    # Tampilkan Soal Berdasarkan Mata Kuliah
+    st.subheader(f"Soal {matkul}")
+    jawaban = []
+    for index, soal in enumerate(soal_data[matkul]):
+        st.subheader(f"{index + 1}. {soal['question']}")
+        jawaban.append(st.radio("Pilih jawaban:", soal["options"], key=f"soal_{matkul}_{index}"))
 
     # TOMBOL KIRIM
     if st.button("✅ Kirim Jawaban"):
         st.success("Jawaban kamu berhasil dikirim!")
-
         # Koreksi otomatis
         skor = 0
-        if jawaban1 == "Natrium":
-            skor += 1
-        if jawaban2 == "H2O":
-            skor += 1
-        if set(jawaban3) == {"CH4", "C2H6"}:
-            skor += 1
+        for index, soal in enumerate(soal_data[matkul]):
+            if jawaban[index] == soal["answer"]:
+                skor += 1
 
         # Tampilkan hasil
-        st.markdown("### 📊 Rekap Jawaban Kamu:")
-        st.write(f"*1.* {jawaban1}")
-        st.write(f"*2.* {jawaban2}")
-        st.write(f"*3.* {', '.join(jawaban3)}" if jawaban3 else "*3.* Belum menjawab")
-
-        st.markdown(f"### 🏆 Skor Akhir: *{skor}/3*")
+        st.markdown(f"### 🏆 Skor Akhir: *{skor}/{len(soal_data[matkul])}*")
 
 elif menu == "Catatan Kuliah":
     st.title("📒 Catatan Kuliah")
@@ -110,4 +111,5 @@ elif menu == "Tentang":
     st.write("Rizmi Maitri Nurgianti")
     st.write("Nafisah Nailalhusna I.")
     st.write("Jane Lazarina Bora Isu")
+
 
