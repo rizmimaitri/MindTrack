@@ -15,7 +15,33 @@ if menu == "Beranda":
     
 elif menu == "Latihan Soal":
     st.title("✏ Latihan Soal")
-    st.write("Silakan jawab soal-soal berikut dan kirim jawabanmu:")
+    
+    # Input untuk membuat folder soal
+    st.subheader("📁 Buat Folder Soal")
+    matkul = st.selectbox("Pilih Mata Kuliah", ["Kimia Fisika", "Spektrofotometri", "Biokimia"])
+    folder_name = st.text_input("Nama Folder Soal")
+
+    if st.button("✅ Buat Folder"):
+        if folder_name:
+            # Simpan folder ke dalam session state
+            if "folders" not in st.session_state:
+                st.session_state.folders = {}
+            if matkul not in st.session_state.folders:
+                st.session_state.folders[matkul] = []
+            st.session_state.folders[matkul].append(folder_name)
+            st.success(f"Folder '{folder_name}' untuk mata kuliah '{matkul}' berhasil dibuat!")
+        else:
+            st.error("Nama folder tidak boleh kosong!")
+
+    # Tampilkan folder yang sudah dibuat
+    st.subheader("📂 Folder Soal yang Sudah Dibuat")
+    if "folders" in st.session_state:
+        for matkul, folders in st.session_state.folders.items():
+            st.write(f"**{matkul}:**")
+            for folder in folders:
+                st.write(f"- {folder}")
+    else:
+        st.write("Belum ada folder yang dibuat.")
 
     # SOAL 1
     st.subheader("1. Unsur manakah yang termasuk logam alkali?")
@@ -49,8 +75,6 @@ elif menu == "Latihan Soal":
         st.write(f"*3.* {', '.join(jawaban3)}" if jawaban3 else "*3.* Belum menjawab")
 
         st.markdown(f"### 🏆 Skor Akhir: *{skor}/3*")
-
-
 
 elif menu == "Catatan Kuliah":
     st.title("📒 Catatan Kuliah")
@@ -86,3 +110,4 @@ elif menu == "Tentang":
     st.write("Rizmi Maitri Nurgianti")
     st.write("Nafisah Nailalhusna I.")
     st.write("Jane Lazarina Bora Isu")
+
