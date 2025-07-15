@@ -31,10 +31,8 @@ if uploaded_file is not None:
             "Jenis File": uploaded_file.type,
             "Ukuran": f"{uploaded_file.size / 1024:.2f} KB"
         }
-    File "/mount/src/mindtrack/streamlit_app.py", line 34
-          st.json(file_details)
-         ^
-
+        st.json(file_details)
+         
 # Tambahan jika ingin menampilkan isi file .txt (opsional)
 if uploaded_file.type == "text/plain":
             content = uploaded_file.read().decode("utf-8")
