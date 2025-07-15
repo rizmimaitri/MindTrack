@@ -80,19 +80,7 @@ soal_data = {
     "Fisika": [
         {"question": "Perpindahan, kecepatan, percepatan, dan gaya termasuk besaran?", "options": ["Skalar", "Vektor", "Turunan","Satuan","Utama"], "answer": "Vektor"},
         {"question": "Daya adalah ?", "options": ["Joule/sekon", "Joule.sekon", "Newton/sekon","Newton.sekon","Joule"], "answer": "Joule/sekon"},
-        {"question": "Dua lembah dan dua bukit gelombang sama dengan?", "options": ["1/2 lambda", "1 lambda", "1,5 lambda","2 lambda","2,5 lambda"], "answer": "2 lambda"},
-        {"question": "?", "options": ["", "", "",""], "answer": ""},
-        {"question": "?", "options": ["", "", "",""], "answer": ""},
-        {"question": "?", "options": ["", "", "",""], "answer": ""},
-        {"question": "?", "options": ["", "", "",""], "answer": ""},
-        {"question": "?", "options": ["", "", "",""], "answer": ""},
-        {"question": "?", "options": ["", "", "",""], "answer": ""},
-        {"question": "?", "options": ["", "", "",""], "answer": ""},
-        {"question": "?", "options": ["", "", "",""], "answer": ""},
-        {"question": "?", "options": ["", "", "",""], "answer": ""},
-        {"question": "?", "options": ["", "", "",""], "answer": ""},
-        {"question": "?", "options": ["", "", "",""], "answer": ""},
-        {"question": "?", "options": ["", "", "",""], "answer": ""},  
+        {"question": "Dua lembah dan dua bukit gelombang sama dengan?", "options": ["1/2 lambda", "1 lambda", "1,5 lambda","2 lambda","2,5 lambda"], "answer": "2 lambda"}, 
     ]
 }
 
