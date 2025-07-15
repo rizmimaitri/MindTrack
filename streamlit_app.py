@@ -31,7 +31,9 @@ if uploaded_file is not None:
             "Jenis File": uploaded_file.type,
             "Ukuran": f"{uploaded_file.size / 1024:.2f} KB"
         }
-        st.json(file_details)
+    File "/mount/src/mindtrack/streamlit_app.py", line 34
+          st.json(file_details)
+         ^
 
 # Tambahan jika ingin menampilkan isi file .txt (opsional)
 if uploaded_file.type == "text/plain":
@@ -41,7 +43,7 @@ if uploaded_file.type == "text/plain":
 elif menu == "Catatan Kuliah":
     st.title("📒 Catatan Kuliah")
 
-    if "show_notes" not in st.session_state:
+if "show_notes" not in st.session_state:
         st.session_state.show_notes = False
 
     tingkat = st.radio("Pilih Tingkat", ["Tingkat 1", "Tingkat 2"], horizontal=True)
