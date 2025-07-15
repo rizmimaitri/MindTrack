@@ -24,6 +24,22 @@ elif menu == "Latihan Soal":
     blok = st.selectbox("Pilih Blok", ["Blok 1", "Blok 2"])
     matkul = st.selectbox("Pilih Mata Kuliah", ["Kimia Fisika", "Spektrofotometri", "Biokimia"])
 
+    import streamlit as st
+# Title for the application
+st.title("Latihan Soal")
+# Select Level
+tingkat = st.radio("Pilih Tingkat:", ["Tingkat 1", "Tingkat 2"])
+# Select Block
+blok = st.selectbox("Pilih Blok:", ["Blok 1", "Blok 2", "Blok 3"])
+# Select Subject
+mata_kuliah = st.selectbox("Pilih Mata Kuliah:", ["Biokimia", "Fisika", "Matematika"])
+# Store answer
+st.header("1. Unsur manakah yang termasuk logam alkali?")
+jawaban = st.radio("Pilih jawaban:", ["A. Lithium", "B. Helium", "C. Neon", "D. Karbon"])
+# Simpan button
+if st.button("Simpan"):
+    st.success("Jawaban Anda telah disimpan!")
+    
     if st.button("✅ simpan"):
         st.session_state.show_notes = True
         st.session_state.selected_tingkat = tingkat
