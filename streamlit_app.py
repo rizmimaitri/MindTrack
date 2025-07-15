@@ -76,7 +76,24 @@ soal_data = {
         {"question": "Apa itu biokimia?", "options": ["Ilmu tentang reaksi kimia dalam makhluk hidup", "Ilmu tentang reaksi fisika", "Ilmu tentang reaksi kimia dalam benda mati"], "answer": "Ilmu tentang reaksi kimia dalam makhluk hidup"},
         {"question": "Apa yang dimaksud dengan metabolisme aerob?", "options": ["Proses metabolisme dengan oksigen", "Proses metabolisme tanpa oksigen", "Proses metabolisme dengan suhu tinggi"], "answer": "Proses metabolisme dengan oksigen"},
         {"question": "Apa itu enzim amilase?", "options": ["Enzim yang menguraikan karbohidrat", "Enzim yang menguraikan protein", "Enzim yang menguraikan lemak"], "answer": "Enzim yang menguraikan karbohidrat"},
-    ]
+    ],
+    "Fisika": [
+        {"question": "Perpindahan, kecepatan, percepatan, dan gaya termasuk besaran?", "options": ["Skalar", "Vektor", "Turunan","Satuan","Utama"], "answer": "Vektor"},
+        {"question": "Daya adalah ?", "options": ["Joule/sekon", "Joule.sekon", "Newton/sekon","Newton.sekon","Joule"], "answer": "Joule/sekon"},
+        {"question": "Dua lembah dan dua bukit gelombang sama dengan?", "options": ["1/2 lambda", "1 lambda", "1,5 lambda","2 lambda","2,5 lambda"], "answer": "2 lambda"},
+        {"question": "?", "options": ["", "", "",""], "answer": ""},
+        {"question": "?", "options": ["", "", "",""], "answer": ""},
+        {"question": "?", "options": ["", "", "",""], "answer": ""},
+        {"question": "?", "options": ["", "", "",""], "answer": ""},
+        {"question": "?", "options": ["", "", "",""], "answer": ""},
+        {"question": "?", "options": ["", "", "",""], "answer": ""},
+        {"question": "?", "options": ["", "", "",""], "answer": ""},
+        {"question": "?", "options": ["", "", "",""], "answer": ""},
+        {"question": "?", "options": ["", "", "",""], "answer": ""},
+        {"question": "?", "options": ["", "", "",""], "answer": ""},
+        {"question": "?", "options": ["", "", "",""], "answer": ""},
+        {"question": "?", "options": ["", "", "",""], "answer": ""},
+             
 }
 
 # Halaman Beranda
