@@ -10,7 +10,7 @@ menu = st.sidebar.selectbox("📚 Pilih Halaman", ["Beranda", "Latihan Soal", "C
 soal_data = {
     "Spektrofotometri": [
         {"question": "Perbedaan metode analisis secara konvensional dan analisis intrumen adalah sebagai berikut, kecuali ?", "options": ["Metode analisis instrumen digunakan untuk analit dengan konsentrasi rendah, sedangkan metode analisis konvensional digunakan untuk analit konsentrasi tinggi", "Metode analisis instrumen membutuhkan standar sedangkan metode analis konvensional tidak ", "Metode analisis instrumen membutuhkan pemisahan analit secara fisik sedangkan metode analis konvensional tidak ","Metode analisis instrumen memiliki sensitivitas lebih tinggi dengan metode analis konvensional"], "answer": "Metode analisis instrumen membutuhkan pemisahan analit secara fisik sedangkan metode analis konvensional tidak "},
-        {"question": "Apa yang diukur dalam spektrofotometri?", "options": ["Konsentrasi", "Volume", "Tekanan"], "answer": "Konsentrasi"},
+        {"question": "?", "options": ["", "", ""], "answer": "Konsentrasi"},
         {"question": "Apa itu panjang gelombang?", "options": ["Jarak antara dua puncak gelombang", "Jumlah gelombang per detik", "Energi cahaya"], "answer": "Jarak antara dua puncak gelombang"},
         {"question": "Apa yang dimaksud dengan absorbansi?", "options": ["Jumlah cahaya yang diteruskan", "Jumlah cahaya yang diserap", "Jumlah cahaya yang dipantulkan"], "answer": "Jumlah cahaya yang diserap"},
         {"question": "Apa itu hukum Beer-Lambert?", "options": ["Hubungan antara konsentrasi dan absorbansi", "Hubungan antara suhu dan tekanan", "Hubungan antara volume dan massa"], "answer": "Hubungan antara konsentrasi dan absorbansi"},
@@ -117,6 +117,32 @@ elif menu == "Catatan Kuliah":
         st.session_state.show_notes = False
 
     tingkat = st.radio("Pilih Tingkat", ["Tingkat 1", "Tingkat 2"], horizontal=True)
-    blok
+    blok = st.selectbox("Pilih Blok", ["Blok 1", "Blok 2"])
+    matkul = st.selectbox("Pilih Mata Kuliah", ["Kimia Fisika", "Spektrofotometri", "Biokimia"])
+
+    if st.button("✅ simpan"):
+        st.session_state.show_notes = True
+        st.session_state.selected_tingkat = tingkat
+        st.session_state.selected_blok = blok
+        st.session_state.selected_matkul = matkul
+
+    if st.session_state.show_notes:
+        st.subheader(f"📘 Catatan untuk {st.session_state.selected_matkul} - {st.session_state.selected_tingkat} {st.session_state.selected_blok}")
+        st.info("Belum ada catatan yang ditambahkan.")
+
+# Halaman Riwayat Jawaban
+elif menu == "Riwayat Jawaban":
+    st.title("🗂 Riwayat Jawaban")
+    st.write("Di sini akan ditampilkan jawaban-jawaban soal yang pernah kamu kerjakan.")
+
+# Halaman Tentang
+elif menu == "Tentang":
+    st.title("ℹ Tentang MindTrack")
+    st.write("Website ini dibuat untuk latihan soal dan mencatat materi perkuliahan.")
+    st.header("Tentang Pendiri")
+    st.write("Zulfikar Syahid")
+    st.write("Rizmi Maitri Nurgianti")
+    st.write("Nafisah Nailalhusna I.")
+    st.write("Jane Lazarina Bora Isu")
 
 
