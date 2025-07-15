@@ -17,9 +17,6 @@ if menu == "Beranda":
 elif menu == "Latihan Soal":
     st.title("✏️ Latihan Soal")
     st.write("Halaman ini nanti akan menampilkan soal-soal dari berbagai mata kuliah.")
-elif menu == "Latihan Soal":
-    st.title("📝 Latihan Soal")
-    st.write("Halaman ini nanti akan menampilkan soal-soal dari berbagai mata kuliah.")
 
 # Form upload file
     uploaded_file = st.file_uploader("Unggah file soal (PDF/DOCX/TXT)", type=["pdf", "docx", "txt"])
