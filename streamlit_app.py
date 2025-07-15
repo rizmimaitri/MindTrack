@@ -33,7 +33,7 @@ elif menu == "Latihan Soal":
         }
         st.json(file_details)
 
-        # Tampilkan isi file .txt jika diunggah
+# Tampilkan isi file .txt jika diunggah
         if uploaded_file.type == "text/plain":
             content = uploaded_file.read().decode("utf-8")
             st.text_area("Isi File:", content, height=300)
