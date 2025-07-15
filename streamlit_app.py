@@ -94,7 +94,7 @@ elif menu == "Latihan Soal":
     st.title("✏ Latihan Soal")
 
     # Pilih Mata Kuliah
-    matkul = st.selectbox("Pilih Mata Kuliah", ["Spektrofotometri", "Kimia Fisika", "Biokimia"])
+    matkul = st.selectbox("Pilih Mata Kuliah", ["Spektrofotometri", "Kimia Fisika", "Biokimia","Fisika"])
 
     # Tampilkan Soal Berdasarkan Mata Kuliah
     st.subheader(f"Soal {matkul}")
