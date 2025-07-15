@@ -10,51 +10,12 @@ menu = st.sidebar.selectbox("📚 Pilih Halaman", ["Beranda", "Latihan Soal", "C
 # Halaman Beranda
 if menu == "Beranda":
     st.title("🧠 MindTrack")
-    st.write("Selamat datang di **MindTrack**, platform latihan soal dan catatan kuliah 👋")
+    st.write("Selamat datang di *MindTrack*, platform latihan soal dan catatan kuliah 👋")
     st.info("Gunakan menu di sebelah kiri untuk mulai belajar.")
     
 elif menu == "Latihan Soal":
     st.title("✏ Latihan Soal")
     st.write("Silakan jawab soal-soal berikut dan kirim jawabanmu:")
-
-    if "show_notes" not in st.session_state:
-        st.session_state.show_notes = False
-
-    tingkat = st.radio("Pilih Tingkat", ["Tingkat 1", "Tingkat 2"], horizontal=True)
-    blok = st.selectbox("Pilih Blok", ["Blok 1", "Blok 2"])
-    matkul = st.selectbox("Pilih Mata Kuliah", ["Kimia Fisika", "Spektrofotometri", "Biokimia"])
-
-    import streamlit as st
-
-# Judul aplikasi
-st.title("Latihan Soal")
-
-# Pemilihan tingkat
-tingkat = st.radio("Pilih Tingkat", ("Tingkat 1", "Tingkat 2"))
-
-# Pemilihan blok
-blok = st.selectbox("Pilih Blok", ["Blok 1", "Blok 2"])
-
-# Pemilihan mata kuliah
-mata_kuliah = st.selectbox("Pilih Mata Kuliah", ["Biokimia", "Fisika", "Kimia"])
-
-# Menyimpan pilihan
-if st.button("Simpan"):
-    st.success("Pilihan Anda telah disimpan!")
-
-# Pertanyaan
-st.subheader("1. Unsur manakah yang termasuk logam alkali?")
-jawaban = st.radio("Pilih jawaban:", ["Na", "K", "Li", "Ca"])
-
-# Proses pengiriman jawaban
-if st.button("Kirim Jawaban"):
-    st.write(f"Jawaban Anda: {jawaban}")
-
-    if st.button("✅ simpan"):
-        st.session_state.show_notes = True
-        st.session_state.selected_tingkat = tingkat
-        st.session_state.selected_blok = blok
-        st.session_state.selected_matkul = matkul
 
     # SOAL 1
     st.subheader("1. Unsur manakah yang termasuk logam alkali?")
@@ -83,11 +44,11 @@ if st.button("Kirim Jawaban"):
 
         # Tampilkan hasil
         st.markdown("### 📊 Rekap Jawaban Kamu:")
-        st.write(f"**1.** {jawaban1}")
-        st.write(f"**2.** {jawaban2}")
-        st.write(f"**3.** {', '.join(jawaban3)}" if jawaban3 else "**3.** Belum menjawab")
+        st.write(f"*1.* {jawaban1}")
+        st.write(f"*2.* {jawaban2}")
+        st.write(f"*3.* {', '.join(jawaban3)}" if jawaban3 else "*3.* Belum menjawab")
 
-        st.markdown(f"### 🏆 Skor Akhir: **{skor}/3**")
+        st.markdown(f"### 🏆 Skor Akhir: *{skor}/3*")
 
 
 
@@ -113,12 +74,12 @@ elif menu == "Catatan Kuliah":
 
 # Halaman Riwayat Jawaban
 elif menu == "Riwayat Jawaban":
-    st.title("🗂️ Riwayat Jawaban")
+    st.title("🗂 Riwayat Jawaban")
     st.write("Di sini akan ditampilkan jawaban-jawaban soal yang pernah kamu kerjakan.")
 
 # Halaman Tentang
 elif menu == "Tentang":
-    st.title("ℹ️ Tentang MindTrack")
+    st.title("ℹ Tentang MindTrack")
     st.write("Website ini dibuat untuk latihan soal dan mencatat materi perkuliahan.")
     st.header("Tentang Pendiri")
     st.write("Zulfikar Syahid")
