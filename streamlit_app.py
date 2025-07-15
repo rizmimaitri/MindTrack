@@ -25,21 +25,31 @@ elif menu == "Latihan Soal":
     matkul = st.selectbox("Pilih Mata Kuliah", ["Kimia Fisika", "Spektrofotometri", "Biokimia"])
 
     import streamlit as st
-# Title for the application
+
+# Judul aplikasi
 st.title("Latihan Soal")
-# Select Level
-tingkat = st.radio("Pilih Tingkat:", ["Tingkat 1", "Tingkat 2"])
-# Select Block
-blok = st.selectbox("Pilih Blok:", ["Blok 1", "Blok 2", "Blok 3"])
-# Select Subject
-mata_kuliah = st.selectbox("Pilih Mata Kuliah:", ["Biokimia", "Fisika", "Matematika"])
-# Store answer
-st.header("1. Unsur manakah yang termasuk logam alkali?")
-jawaban = st.radio("Pilih jawaban:", ["A. Lithium", "B. Helium", "C. Neon", "D. Karbon"])
-# Simpan button
+
+# Pemilihan tingkat
+tingkat = st.radio("Pilih Tingkat", ("Tingkat 1", "Tingkat 2"))
+
+# Pemilihan blok
+blok = st.selectbox("Pilih Blok", ["Blok 1", "Blok 2"])
+
+# Pemilihan mata kuliah
+mata_kuliah = st.selectbox("Pilih Mata Kuliah", ["Biokimia", "Fisika", "Kimia"])
+
+# Menyimpan pilihan
 if st.button("Simpan"):
-    st.success("Jawaban Anda telah disimpan!")
-    
+    st.success("Pilihan Anda telah disimpan!")
+
+# Pertanyaan
+st.subheader("1. Unsur manakah yang termasuk logam alkali?")
+jawaban = st.radio("Pilih jawaban:", ["Na", "K", "Li", "Ca"])
+
+# Proses pengiriman jawaban
+if st.button("Kirim Jawaban"):
+    st.write(f"Jawaban Anda: {jawaban}")
+
     if st.button("✅ simpan"):
         st.session_state.show_notes = True
         st.session_state.selected_tingkat = tingkat
