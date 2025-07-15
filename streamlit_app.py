@@ -45,7 +45,7 @@ if uploaded_file.type == "text/plain":
 elif menu == "Catatan Kuliah":
     st.title("📒 Catatan Kuliah")
 
-if "show_notes" not in st.session_state:
+    if "show_notes" not in st.session_state:
         st.session_state.show_notes = False
 
     tingkat = st.radio("Pilih Tingkat", ["Tingkat 1", "Tingkat 2"], horizontal=True)
