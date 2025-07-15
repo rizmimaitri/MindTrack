@@ -12,27 +12,44 @@ if menu == "Beranda":
     st.title("🧠 MindTrack")
     st.write("Selamat datang di **MindTrack**, platform latihan soal dan catatan kuliah 👋")
     st.info("Gunakan menu di sebelah kiri untuk mulai belajar.")
-
+    
 elif menu == "Latihan Soal":
     st.title("✏ Latihan Soal")
-    st.write("Halaman ini nanti akan menampilkan soal-soal dari berbagai mata kuliah.")
+    st.write("Silakan jawab soal-soal berikut dan kirim jawabanmu:")
 
-    uploaded_file = st.file_uploader("Unggah file soal (PDF/DOCX/TXT)", type=["pdf", "docx", "txt"])
+    # SOAL 1
+    st.subheader("1. Unsur manakah yang termasuk logam alkali?")
+    jawaban1 = st.radio("Pilih jawaban:", ["Oksigen", "Natrium", "Kalsium", "Klorin"], key="soal1")
 
-    if uploaded_file is not None:
-        st.success(f"Berhasil mengunggah: {uploaded_file.name}")
+    # SOAL 2
+    st.subheader("2. Rumus kimia dari air adalah...")
+    jawaban2 = st.radio("Pilih jawaban:", ["CO2", "NaCl", "H2O", "CH4"], key="soal2")
 
-        file_details = {
-            "Nama File": uploaded_file.name,
-            "Jenis File": uploaded_file.type,
-            "Ukuran": f"{uploaded_file.size / 1024:.2f} KB"
-        }
-        st.json(file_details)
+    # SOAL 3
+    st.subheader("3. Manakah yang merupakan senyawa organik?")
+    jawaban3 = st.multiselect("Pilih semua yang benar:", ["NaCl", "CH4", "C2H6", "H2SO4"], key="soal3")
 
-        # Tampilkan isi file jika format .txt
-        if uploaded_file.type == "text/plain":
-            content = uploaded_file.read().decode("utf-8")
-            st.text_area("Isi File:", content, height=300)
+    # TOMBOL KIRIM
+    if st.button("✅ Kirim Jawaban"):
+        st.success("Jawaban kamu berhasil dikirim!")
+
+        # Koreksi otomatis
+        skor = 0
+        if jawaban1 == "Natrium":
+            skor += 1
+        if jawaban2 == "H2O":
+            skor += 1
+        if set(jawaban3) == {"CH4", "C2H6"}:
+            skor += 1
+
+        # Tampilkan hasil
+        st.markdown("### 📊 Rekap Jawaban Kamu:")
+        st.write(f"**1.** {jawaban1}")
+        st.write(f"**2.** {jawaban2}")
+        st.write(f"**3.** {', '.join(jawaban3)}" if jawaban3 else "**3.** Belum menjawab")
+
+        st.markdown(f"### 🏆 Skor Akhir: **{skor}/3**")
+
 
 
 elif menu == "Catatan Kuliah":
