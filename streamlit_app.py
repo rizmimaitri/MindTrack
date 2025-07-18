@@ -4,7 +4,7 @@ import streamlit as st
 st.set_page_config(page_title="MindTrack", page_icon="🧠")
 
 # Menu Sidebar
-menu = st.sidebar.selectbox("📚 Pilih Halaman", ["Beranda 😊", "Latihan Soal ✏️", "Catatan Kuliah 📒", "Riwayat Jawaban 🗂️", "Tentang ℹ️"])
+menu = st.sidebar.selectbox("📚 Pilih Halaman", ["Beranda 🏠", "Latihan Soal ✏️", "Catatan Kuliah 📒", "Riwayat Jawaban 🗂️", "Tentang ℹ️"])
 
 # Data Soal
 soal_data = {
@@ -97,7 +97,7 @@ soal_data = {
 }
 
 # Halaman Beranda
-if menu == "Beranda 😊":
+if menu == "Beranda 🏠":
     st.title("🧠 MindTrack")
     st.write("Selamat datang di MindTrack, 👋")
     st.write("Sudah Siap Untuk Mulai Belajar?")
