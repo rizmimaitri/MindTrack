@@ -253,52 +253,41 @@ elif menu == "Riwayat Jawaban 🗂️":
     st.write("Di sini akan ditampilkan jawaban-jawaban soal yang pernah kamu kerjakan.")
 
 # Halaman Tentang
-elif menu == "Tentang":
-    st.title("ℹ️ Tentang Aplikasi MindTrack")
-
-    st.markdown("""
-    **MindTrack** adalah aplikasi berbasis web yang dirancang khusus untuk membantu mahasiswa memahami dan menguasai materimelalui latihan soal interaktif, catatan kuliah, dan pelacakan progres belajar. Aplikasi ini memberikan pengalaman belajar yang terstruktur, sederhana, dan menyenangkan.
-    """)
-
-    st.subheader("🎯 Tujuan Kami")
-    st.markdown("""
-    - Memberikan sarana belajar mandiri bagi mahasiswa bidang kimia.  
-    - Menyediakan soal latihan yang sesuai dengan materi kuliah dan standar akademik.  
-    - Membantu pengguna memantau perkembangan belajar melalui riwayat hasil latihan.  
-    """)
-
-    st.subheader("⚙️ Fitur Utama")
-    st.markdown("""
-    - 🏠 **Beranda**: Menampilkan ringkasan fitur dan akses cepat ke semua halaman penting.  
-    - 📝 **Latihan Soal**: Kumpulan soal pilihan ganda lengkap dengan pembahasan dan skor.  
-    - 📚 **Catatan Kuliah**: Ringkasan materi kuliah sebagai referensi belajar.  
-    - 📊 **Riwayat Jawaban**: Melacak jawaban dan skor dari latihan soal yang telah dikerjakan.  
-    - ℹ️ **Tentang**: Informasi aplikasi dan pengembang.  
-    """)
-
-    st.subheader("👨‍💻 Pengembang")
-    st.markdown("""
-    Aplikasi ini dibuat oleh tim mahasiswa dari **Politeknik AKA Bogor** sebagai bagian dari proyek pengembangan perangkat lunak edukatif:
+elif menu == "Tentang ℹ️":
+    st.title("ℹ Tentang MindTrack")
+    st.write("MindTrack adalah aplikasi pembelajaran interaktif yang dirancang untuk membantu mahasiswa dan pelajar dalam memahami konsep-konsep penting di bidang kimia, fisika, dan biokimia.")
     
-    - Zulfikar Syahid  
-    - Rizmi Maitri Nurgianti  
-    - Nafisah Nailalhusna Isbandi 
-    - Jane Lazarina Bora Isu
+    st.header("Tujuan Aplikasi")
+    st.write("""
+        Aplikasi ini bertujuan untuk:
+        - Menyediakan latihan soal yang bervariasi untuk meningkatkan pemahaman materi.
+        - Menyediakan catatan kuliah yang mudah diakses untuk membantu dalam belajar.
+        - Mencatat riwayat jawaban untuk membantu pengguna melacak kemajuan mereka.
     """)
-
-    st.subheader("🛠️ Teknologi yang Digunakan")
-    st.markdown("""
-    - Python  
-    - Streamlit  
-    - Pandas  
-    - GitHub  
+    
+    st.header("Fitur Utama")
+    st.write("""
+        - **Latihan Soal**: Pengguna dapat memilih mata kuliah dan menjawab soal-soal yang telah disediakan.
+        - **Catatan Kuliah**: Pengguna dapat mengakses catatan kuliah yang relevan dengan mata kuliah yang dipilih.
+        - **Riwayat Jawaban**: Pengguna dapat melihat jawaban yang telah mereka berikan sebelumnya.
     """)
-
-    st.subheader("📬 Hubungi Kami")
-    st.markdown("""
-    Jika kamu memiliki pertanyaan, saran, atau menemukan bug, silakan hubungi tim pengembang melalui:
-
-    📧 Email: `mindtrack.team@gmail.com`  
-    🌐 GitHub: [github.com/mindtrack-app](https://github.com/mindtrack-app)  
+    
+    st.header("Tim Pengembang")
+    st.write("""
+        Aplikasi ini dikembangkan oleh:
+        - **Zulfikar Syahid**: 
+        - **Rizmi Maitri Nurgianti**: 
+        - **Nafisah Nailalhusna I.**: 
+        - **Jane Lazarina Bora Isu**: 
     """)
+    
+    st.header("Kontak")
+    st.write("""
+        Jika Anda memiliki pertanyaan atau masukan, silakan hubungi kami di:
+        - Email: mindtrack@example.com
+        - Instagram: [@mindtrack_app](https://instagram.com/mindtrack_app)
+    """)
+    
+    st.write("Terima kasih telah menggunakan MindTrack! Selamat belajar! 🎉")
+
 
