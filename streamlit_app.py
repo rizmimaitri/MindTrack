@@ -167,7 +167,7 @@ soal_data = {
     "Fisika": [
         {"question": "Perpindahan, kecepatan, percepatan, dan gaya termasuk besaran?", "options": ["Skalar", "Vektor", "Turunan", "Satuan", "Utama"], "answer": "Vektor"},
         {"question": "Daya adalah?", "options": ["Joule/sekon", "Joule.sekon", "Newton/sekon", "Newton.sekon", "Joule"], "answer": "Joule/sekon"},
-        {"question": "Dua lembah dan dua bukit gelombang sama dengan?", "options": ["1/2 lambda", "1 lambda", "1,5 lambda", "2 lambda", "2,5 lambda"], "answer": "2 lambda"}, 
+                {"question": "Dua lembah dan dua bukit gelombang sama dengan?", "options": ["1/2 lambda", "1 lambda", "1,5 lambda", "2 lambda", "2,5 lambda"], "answer": "2 lambda"}, 
         {"question": "Diantara besaran dibawah ini, manakah yang termasuk besaran pokok?", "options": ["Kecepatan", "Percepatan", "Jumlah zat", "Kadar", "Energi"], "answer": "Kadar"},
         {"question": "Pada kasus benda jatuh, energi yang besarnya semakin berkurang adalah?", "options": ["Energi potensial", "Energi kinetik", "Energi gerak", "Energi gesekan", "Energi mekanik"], "answer": "Energi mekanik"},
         {"question": "Usaha yang dilakukan oleh gaya gesek selalu bernilai?", "options": ["Positif", "Negatif", "Tergantung kemiringan", "Tergantung sudut", "Nol"], "answer": "Nol"},
@@ -357,5 +357,4 @@ elif menu == "ℹ Tentang":
     st.write("👤 Rizmi Maitri Nurgianti")
     st.write("👤 Nafisah Nailalhusna I.")
     st.write("👤 Jane Lazarina Bora Isu")
-
 
