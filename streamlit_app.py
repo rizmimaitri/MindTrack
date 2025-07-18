@@ -4,11 +4,11 @@ import streamlit as st
 st.set_page_config(page_title="MindTrack", page_icon="🧠")
 
 # Menu Sidebar
-menu = st.sidebar.selectbox("📚 Pilih Halaman", ["🏠 Beranda", "✍️ Latihan Soal", "📒 Catatan Kuliah", "💡 Riwayat Jawaban", "ℹ️ Tentang"])
+menu = st.sidebar.selectbox("📚 Pilih Halaman", ["Beranda", "Latihan Soal", "Catatan Kuliah", "Riwayat Jawaban", "Tentang"])
 
 # Data Soal
 soal_data = {
-    "Spektrofotometri 💥🧪": [
+    "Spektrofotometri": [
         {"question": "Perbedaan metode analisis secara konvensional dan analisis intrumen adalah sebagai berikut, kecuali ?", "options": ["Metode analisis instrumen digunakan untuk analit dengan konsentrasi rendah, sedangkan metode analisis konvensional digunakan untuk analit konsentrasi tinggi", "Metode analisis instrumen membutuhkan standar sedangkan metode analis konvensional tidak ", "Metode analisis instrumen membutuhkan pemisahan analit secara fisik sedangkan metode analis konvensional tidak ","Metode analisis instrumen memiliki sensitivitas lebih tinggi dengan metode analis konvensional"], "answer": "Metode analisis instrumen membutuhkan pemisahan analit secara fisik sedangkan metode analis konvensional tidak "},
         {"question": "Jika transmita suatu larutan adalah 19.4% maka absorbansi larutan tersebut adalah?", "options": [" 1.288 ", "1,404 ", "0,806 ","0,712"], "answer": "0,712"},
         {"question": "Apa itu panjang gelombang?", "options": ["Jarak antara dua puncak gelombang", "Jumlah gelombang per detik", "Energi cahaya"], "answer": "Jarak antara dua puncak gelombang"},
@@ -31,7 +31,7 @@ soal_data = {
         {"question": "Apa yang dimaksud dengan efek sel?", "options": ["Perubahan absorbansi akibat konsentrasi", "Perubahan suhu akibat cahaya", "Perubahan tekanan akibat cahaya"], "answer": "Perubahan absorbansi akibat konsentrasi"},
         {"question": "Apa itu spektrofotometer UV-Vis?", "options": ["Alat untuk mengukur cahaya ultraviolet dan tampak", "Alat untuk mengukur suhu", "Alat untuk mengukur tekanan"], "answer": "Alat untuk mengukur cahaya ultraviolet dan tampak"},
     ],
-    "Kimia Fisika ⚛️": [
+    "Kimia Fisika": [
         {"question": "Apa hukum pertama termodinamika?", "options": ["Energi tidak dapat diciptakan atau dimusnahkan", "Energi dapat diciptakan", "Energi selalu meningkat"], "answer": "Energi tidak dapat diciptakan atau dimusnahkan"},
         {"question": "Apa itu entropi?", "options": ["Ukuran ketidakteraturan", "Ukuran energi", "Ukuran massa"], "answer": "Ukuran ketidakteraturan"},
         {"question": "Apa yang dimaksud dengan energi potensial?", "options": ["Energi yang dimiliki benda karena posisinya", "Energi yang dimiliki benda karena gerakannya", "Energi yang dihasilkan oleh reaksi kimia"], "answer": "Energi yang dimiliki benda karena posisinya"},
@@ -54,7 +54,7 @@ soal_data = {
         {"question": "Apa itu katalis?", "options": ["Zat yang mempercepat reaksi tanpa ikut bereaksi", "Zat yang memperlambat reaksi", "Zat yang tidak berpengaruh pada reaksi"], "answer": "Zat yang mempercepat reaksi tanpa ikut bereaksi"},
         {"question": "Apa yang dimaksud dengan pH?", "options": ["Ukuran keasaman atau kebasaan suatu larutan", "Ukuran konsentrasi", "Ukuran energi"], "answer": "Ukuran keasaman atau kebasaan suatu larutan"},
     ],
-    "Biokimia 🧬": [
+    "Biokimia": [
         {"question": "Apa itu enzim?", "options": ["Katalisator biologis", "Zat pewarna", "Zat pengawet"], "answer": "Katalisator biologis"},
         {"question": "Apa yang dimaksud dengan metabolisme?", "options": ["Proses penguraian makanan", "Proses pembentukan energi", "Proses pengolahan limbah"], "answer": "Proses penguraian makanan"},
         {"question": "Apa itu asam amino?", "options": ["Penyusun protein", "Penyusun karbohidrat", "Penyusun lemak"], "answer": "Penyusun protein"},
@@ -77,7 +77,7 @@ soal_data = {
         {"question": "Apa yang dimaksud dengan metabolisme aerob?", "options": ["Proses metabolisme dengan oksigen", "Proses metabolisme tanpa oksigen", "Proses metabolisme dengan suhu tinggi"], "answer": "Proses metabolisme dengan oksigen"},
         {"question": "Apa itu enzim amilase?", "options": ["Enzim yang menguraikan karbohidrat", "Enzim yang menguraikan protein", "Enzim yang menguraikan lemak"], "answer": "Enzim yang menguraikan karbohidrat"},
     ],
-    "Fisika 📐": [
+    "Fisika": [
         {"question": "Perpindahan, kecepatan, percepatan, dan gaya termasuk besaran?", "options": ["Skalar", "Vektor", "Turunan","Satuan","Utama"], "answer": "Vektor"},
         {"question": "Daya adalah ?", "options": ["Joule/sekon", "Joule.sekon", "Newton/sekon","Newton.sekon","Joule"], "answer": "Joule/sekon"},
         {"question": "Dua lembah dan dua bukit gelombang sama dengan?", "options": ["1/2 lambda", "1 lambda", "1,5 lambda","2 lambda","2,5 lambda"], "answer": "2 lambda"}, 
@@ -99,12 +99,12 @@ soal_data = {
 # Halaman Beranda
 if menu == "Beranda":
     st.title("🧠 MindTrack")
-    st.write("Selamat datang di *MindTrack*, 👋")
+    st.write("Selamat datang di MindTrack, 👋")
     st.write("Sudah Siap Untuk Mulai Belajar?")
     st.info("Gunakan menu di sebelah kiri untuk mulai belajar.")
 
 elif menu == "Latihan Soal":
-    st.title("✍️ Latihan Soal")
+    st.title("✏ Latihan Soal")
 
     # Pilih Mata Kuliah
     matkul = st.selectbox("Pilih Mata Kuliah", ["Spektrofotometri", "Kimia Fisika", "Biokimia", "Fisika"])
@@ -126,10 +126,10 @@ elif menu == "Latihan Soal":
                 skor += 1
             else:
                 # Tampilkan jawaban yang benar jika salah
-                st.error(f"Jawaban kamu untuk soal {index + 1} salah. Jawaban yang benar adalah: **{soal['answer']}**")
+                st.error(f"Jawaban kamu untuk soal {index + 1} salah. Jawaban yang benar adalah: *{soal['answer']}*")
 
         # Tampilkan hasil
-        st.markdown(f"### 🏆 Skor Akhir: *{skor}/{len(soal_data[matkul])}*")
+        st.markdown(f"### 🏆 Skor Akhir: {skor}/{len(soal_data[matkul])}")
 
 # Catatan Kuliah
 materi_titles = {
@@ -197,7 +197,7 @@ if menu == "Catatan Kuliah":
             st.markdown("---")
             konten_subheader_title = current_matkul_titles.get(st.session_state.selected_pertemuan_simple, f"Konten Pertemuan {st.session_state.selected_pertemuan_simple}")
             st.subheader(f"Konten: {konten_subheader_title}")
-            st.write(f"Ini adalah detail untuk **{st.session_state.selected_matkul_simple}** - **{konten_subheader_title}**.")
+            st.write(f"Ini adalah detail untuk *{st.session_state.selected_matkul_simple}* - *{konten_subheader_title}*.")
             
             # --- BAGIAN KONTEN DAN GAMBAR ---
             if st.session_state.selected_matkul_simple == "Kimia Fisika":
@@ -249,12 +249,12 @@ if menu == "Catatan Kuliah":
 
 # Halaman Riwayat Jawaban
 elif menu == "Riwayat Jawaban":
-    st.title("💡 Riwayat Jawaban")
+    st.title("🗂 Riwayat Jawaban")
     st.write("Di sini akan ditampilkan jawaban-jawaban soal yang pernah kamu kerjakan.")
 
 # Halaman Tentang
 elif menu == "Tentang":
-    st.title("ℹ️ Tentang MindTrack")
+    st.title("ℹ Tentang MindTrack")
     st.write("Website ini dibuat untuk latihan soal dan mencatat materi perkuliahan.")
     st.header("Tentang Pendiri")
     st.write("Zulfikar Syahid")
