@@ -253,11 +253,52 @@ elif menu == "Riwayat Jawaban 🗂️":
     st.write("Di sini akan ditampilkan jawaban-jawaban soal yang pernah kamu kerjakan.")
 
 # Halaman Tentang
-elif menu == "Tentang ℹ️":
-    st.title("ℹ Tentang MindTrack")
-    st.write("Website ini dibuat untuk latihan soal dan mencatat materi perkuliahan.")
-    st.header("Tentang Pendiri")
-    st.write("Zulfikar Syahid")
-    st.write("Rizmi Maitri Nurgianti")
-    st.write("Nafisah Nailalhusna I.")
-    st.write("Jane Lazarina Bora Isu")
+elif menu == "Tentang":
+    st.title("ℹ️ Tentang Aplikasi MindTrack")
+
+    st.markdown("""
+    **MindTrack** adalah aplikasi berbasis web yang dirancang khusus untuk membantu mahasiswa memahami dan menguasai materimelalui latihan soal interaktif, catatan kuliah, dan pelacakan progres belajar. Aplikasi ini memberikan pengalaman belajar yang terstruktur, sederhana, dan menyenangkan.
+    """)
+
+    st.subheader("🎯 Tujuan Kami")
+    st.markdown("""
+    - Memberikan sarana belajar mandiri bagi mahasiswa bidang kimia.  
+    - Menyediakan soal latihan yang sesuai dengan materi kuliah dan standar akademik.  
+    - Membantu pengguna memantau perkembangan belajar melalui riwayat hasil latihan.  
+    """)
+
+    st.subheader("⚙️ Fitur Utama")
+    st.markdown("""
+    - 🏠 **Beranda**: Menampilkan ringkasan fitur dan akses cepat ke semua halaman penting.  
+    - 📝 **Latihan Soal**: Kumpulan soal pilihan ganda lengkap dengan pembahasan dan skor.  
+    - 📚 **Catatan Kuliah**: Ringkasan materi kuliah sebagai referensi belajar.  
+    - 📊 **Riwayat Jawaban**: Melacak jawaban dan skor dari latihan soal yang telah dikerjakan.  
+    - ℹ️ **Tentang**: Informasi aplikasi dan pengembang.  
+    """)
+
+    st.subheader("👨‍💻 Pengembang")
+    st.markdown("""
+    Aplikasi ini dibuat oleh tim mahasiswa dari **Politeknik AKA Bogor** sebagai bagian dari proyek pengembangan perangkat lunak edukatif:
+    
+    - Zulfikar Syahid  
+    - Rizmi Maitri Nurgianti  
+    - Nafisah Nailalhusna Isbandi 
+    - Jane Lazarina Bora Isu
+    """)
+
+    st.subheader("🛠️ Teknologi yang Digunakan")
+    st.markdown("""
+    - Python  
+    - Streamlit  
+    - Pandas  
+    - GitHub  
+    """)
+
+    st.subheader("📬 Hubungi Kami")
+    st.markdown("""
+    Jika kamu memiliki pertanyaan, saran, atau menemukan bug, silakan hubungi tim pengembang melalui:
+
+    📧 Email: `mindtrack.team@gmail.com`  
+    🌐 GitHub: [github.com/mindtrack-app](https://github.com/mindtrack-app)  
+    """)
+
