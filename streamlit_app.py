@@ -134,8 +134,7 @@ elif menu == "Catatan Kuliah":
     materi_titles = {
         "Kimia Fisika": {
             1: "Gas Ideal dan Gas Nyata",
-            2: "Entropi dan Energi Bebas",
-            3: "Kinetika Reaksi"
+            2: "Hukum Thermodinamika",
         },
         "Spektrofotometri": {
             1: "Prinsip Dasar UV-Vis",
@@ -208,10 +207,12 @@ elif menu == "Catatan Kuliah":
                     
                 elif st.session_state.selected_pertemuan_simple == 2:
                     st.write("Materi Kimia Fisika Pertemuan 2: Hukum Thermodinamika.")
-                    st.image("URL_GAMBAR_KIMIA_FISIKA_P2_ANDA", caption="Diagram Entropi", width=500)
-                elif st.session_state.selected_pertemuan_simple == 3:
-                    st.write("Materi Kimia Fisika Pertemuan 3: Kinetika Reaksi.")
-                    st.image("URL_GAMBAR_KIMIA_FISIKA_P3_ANDA", caption="Grafik Laju Reaksi", width=500)
+                    st.image("https://github.com/fiikar/copy-projek/blob/main/Hukum%20Termodinamika_1.jpg")
+                    st.image("https://github.com/fiikar/copy-projek/blob/main/Hukum%20Termodinamika_2.jpg")
+                    st.image("https://github.com/fiikar/copy-projek/blob/main/Hukum%20Termodinamika_3.jpg")
+                    st.image("https://github.com/fiikar/copy-projek/blob/main/Hukum%20Termodinamika_4.jpg")
+                    st.image("https://github.com/fiikar/copy-projek/blob/main/Hukum%20Termodinamika_5.jpg")
+                    st.image("https://github.com/fiikar/copy-projek/blob/main/Hukum%20Termodinamika_6.jpg")
             
             elif st.session_state.selected_matkul_simple == "Spektrofotometri":
                 if st.session_state.selected_pertemuan_simple == 1:
