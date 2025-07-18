@@ -4,7 +4,7 @@ import streamlit as st
 st.set_page_config(page_title="MindTrack", page_icon="🧠")
 
 # Menu Sidebar
-menu = st.sidebar.selectbox("📚 Pilih Halaman", ["🏠Beranda", "✍️Latihan Soal", "📒Catatan Kuliah", "Riwayat Jawaban", "ℹ️Tentang"])
+menu = st.sidebar.selectbox("📚 Pilih Halaman", ["Beranda", "Latihan Soal", "Catatan Kuliah", "Riwayat Jawaban", "Tentang"])
 
 # Data Soal
 soal_data = {
