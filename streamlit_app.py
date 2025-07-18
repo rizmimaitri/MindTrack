@@ -8,7 +8,7 @@ menu = st.sidebar.selectbox("📚 Pilih Halaman", ["Beranda", "Latihan Soal", "C
 
 # Data Soal
 soal_data = {
-    "Spektrofotometri": [
+    "Spektrofotometri 🧪": [
         {"question": "Perbedaan metode analisis secara konvensional dan analisis intrumen adalah sebagai berikut, kecuali ?", "options": ["Metode analisis instrumen digunakan untuk analit dengan konsentrasi rendah, sedangkan metode analisis konvensional digunakan untuk analit konsentrasi tinggi", "Metode analisis instrumen membutuhkan standar sedangkan metode analis konvensional tidak ", "Metode analisis instrumen membutuhkan pemisahan analit secara fisik sedangkan metode analis konvensional tidak ","Metode analisis instrumen memiliki sensitivitas lebih tinggi dengan metode analis konvensional"], "answer": "Metode analisis instrumen membutuhkan pemisahan analit secara fisik sedangkan metode analis konvensional tidak "},
         {"question": "Jika transmita suatu larutan adalah 19.4% maka absorbansi larutan tersebut adalah?", "options": [" 1.288 ", "1,404 ", "0,806 ","0,712"], "answer": "0,712"},
         {"question": "Apa itu panjang gelombang?", "options": ["Jarak antara dua puncak gelombang", "Jumlah gelombang per detik", "Energi cahaya"], "answer": "Jarak antara dua puncak gelombang"},
@@ -31,7 +31,7 @@ soal_data = {
         {"question": "Apa yang dimaksud dengan efek sel?", "options": ["Perubahan absorbansi akibat konsentrasi", "Perubahan suhu akibat cahaya", "Perubahan tekanan akibat cahaya"], "answer": "Perubahan absorbansi akibat konsentrasi"},
         {"question": "Apa itu spektrofotometer UV-Vis?", "options": ["Alat untuk mengukur cahaya ultraviolet dan tampak", "Alat untuk mengukur suhu", "Alat untuk mengukur tekanan"], "answer": "Alat untuk mengukur cahaya ultraviolet dan tampak"},
     ],
-    "Kimia Fisika": [
+    "Kimia Fisika 🔬": [
         {"question": "Apa hukum pertama termodinamika?", "options": ["Energi tidak dapat diciptakan atau dimusnahkan", "Energi dapat diciptakan", "Energi selalu meningkat"], "answer": "Energi tidak dapat diciptakan atau dimusnahkan"},
         {"question": "Apa itu entropi?", "options": ["Ukuran ketidakteraturan", "Ukuran energi", "Ukuran massa"], "answer": "Ukuran ketidakteraturan"},
         {"question": "Apa yang dimaksud dengan energi potensial?", "options": ["Energi yang dimiliki benda karena posisinya", "Energi yang dimiliki benda karena gerakannya", "Energi yang dihasilkan oleh reaksi kimia"], "answer": "Energi yang dimiliki benda karena posisinya"},
@@ -54,7 +54,7 @@ soal_data = {
         {"question": "Apa itu katalis?", "options": ["Zat yang mempercepat reaksi tanpa ikut bereaksi", "Zat yang memperlambat reaksi", "Zat yang tidak berpengaruh pada reaksi"], "answer": "Zat yang mempercepat reaksi tanpa ikut bereaksi"},
         {"question": "Apa yang dimaksud dengan pH?", "options": ["Ukuran keasaman atau kebasaan suatu larutan", "Ukuran konsentrasi", "Ukuran energi"], "answer": "Ukuran keasaman atau kebasaan suatu larutan"},
     ],
-    "Biokimia": [
+    "Biokimia 🧬": [
         {"question": "Apa itu enzim?", "options": ["Katalisator biologis", "Zat pewarna", "Zat pengawet"], "answer": "Katalisator biologis"},
         {"question": "Apa yang dimaksud dengan metabolisme?", "options": ["Proses penguraian makanan", "Proses pembentukan energi", "Proses pengolahan limbah"], "answer": "Proses penguraian makanan"},
         {"question": "Apa itu asam amino?", "options": ["Penyusun protein", "Penyusun karbohidrat", "Penyusun lemak"], "answer": "Penyusun protein"},
@@ -77,7 +77,7 @@ soal_data = {
         {"question": "Apa yang dimaksud dengan metabolisme aerob?", "options": ["Proses metabolisme dengan oksigen", "Proses metabolisme tanpa oksigen", "Proses metabolisme dengan suhu tinggi"], "answer": "Proses metabolisme dengan oksigen"},
         {"question": "Apa itu enzim amilase?", "options": ["Enzim yang menguraikan karbohidrat", "Enzim yang menguraikan protein", "Enzim yang menguraikan lemak"], "answer": "Enzim yang menguraikan karbohidrat"},
     ],
-    "Fisika": [
+    "Fisika ⚛️": [
         {"question": "Perpindahan, kecepatan, percepatan, dan gaya termasuk besaran?", "options": ["Skalar", "Vektor", "Turunan","Satuan","Utama"], "answer": "Vektor"},
         {"question": "Daya adalah ?", "options": ["Joule/sekon", "Joule.sekon", "Newton/sekon","Newton.sekon","Joule"], "answer": "Joule/sekon"},
         {"question": "Dua lembah dan dua bukit gelombang sama dengan?", "options": ["1/2 lambda", "1 lambda", "1,5 lambda","2 lambda","2,5 lambda"], "answer": "2 lambda"}, 
@@ -107,7 +107,7 @@ elif menu == "Latihan Soal":
     st.title("✏ Latihan Soal")
 
     # Pilih Mata Kuliah
-    matkul = st.selectbox("Pilih Mata Kuliah", ["Spektrofotometri", "Kimia Fisika", "Biokimia", "Fisika"])
+    matkul = st.selectbox("Pilih Mata Kuliah", ["Spektrofotometri 🧪", "Kimia Fisika 🔬", "Biokimia 🧬", "Fisika ⚛️"])
 
     # Tampilkan Soal Berdasarkan Mata Kuliah
     st.subheader(f"Soal {matkul}")
@@ -133,16 +133,16 @@ elif menu == "Latihan Soal":
 
 # Catatan Kuliah
 materi_titles = {
-    "Kimia Fisika": {
+    "Kimia Fisika 🔬": {
         1: "Gas Ideal dan Gas Nyata",
         2: "Hukum Thermodinamika"
     },
-    "Spektrofotometri": {
+    "Spektrofotometri 🧪": {
         1: "Spektrofotometri Infrared",
         2: "Flame Photometry",
         3: "ICP AES"
     },
-    "Biokimia": {
+    "Biokimia 🧬": {
         1: "Protein",
         2: "Enzim",
         3: "Antibodi"
@@ -200,7 +200,7 @@ if menu == "Catatan Kuliah":
             st.write(f"Ini adalah detail untuk *{st.session_state.selected_matkul_simple}* - *{konten_subheader_title}*.")
             
             # --- BAGIAN KONTEN DAN GAMBAR ---
-            if st.session_state.selected_matkul_simple == "Kimia Fisika":
+            if st.session_state.selected_matkul_simple == "Kimia Fisika 🔬":
                 if st.session_state.selected_pertemuan_simple == 1:
                     st.write("Gas Ideal dan Gas Nyata")
                     st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Notes_250708_103057_1.jpg")
@@ -221,7 +221,7 @@ if menu == "Catatan Kuliah":
                     st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Hukum%20Termodinamika_5.jpg")
                     st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Hukum%20Termodinamika_6.jpg")    
                     
-            elif st.session_state.selected_matkul_simple == "Spektrofotometri":
+            elif st.session_state.selected_matkul_simple == "Spektrofotometri 🧪":
                 if st.session_state.selected_pertemuan_simple == 1:
                     st.write("Materi Spektrofotometri Pertemuan 1: Prinsip Dasar UV-Vis.")
                     st.image("URL_GAMBAR_SPEKTRO_P1_ANDA", caption="Skema Spektrofotometer", width=500)
@@ -232,7 +232,7 @@ if menu == "Catatan Kuliah":
                     st.write("Materi Spektrofotometri Pertemuan 3: Spektrofotometri Serapan Atom (AAS).")
                     st.image("URL_GAMBAR_SPEKTRO_P3_ANDA", caption="Prinsip AAS", width=500)
             
-            elif st.session_state.selected_matkul_simple == "Biokimia":
+            elif st.session_state.selected_matkul_simple == "Biokimia 🧬":
                 if st.session_state.selected_pertemuan_simple == 1:
                     st.write("Materi Biokimia Pertemuan 1: Struktur Karbohidrat dan Lipid.")
                     st.image("URL_GAMBAR_BIOKIMIA_P1_ANDA", caption="Struktur Glukosa", width=500)
