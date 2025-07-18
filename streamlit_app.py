@@ -254,7 +254,7 @@ elif menu == "Riwayat Jawaban 🗂️":
 
 # Halaman Tentang
 elif menu == "Tentang ℹ️":
-    st.title("ℹ Tentang MindTrack")
+    st.title("ℹ️Tentang MindTrack")
     st.write("MindTrack adalah aplikasi pembelajaran interaktif yang dirancang untuk membantu mahasiswa dan pelajar dalam memahami konsep-konsep penting di bidang kimia, fisika, dan biokimia.")
     
     st.header("Tujuan Aplikasi")
@@ -262,7 +262,7 @@ elif menu == "Tentang ℹ️":
         Aplikasi ini bertujuan untuk:
         - Menyediakan latihan soal yang bervariasi untuk meningkatkan pemahaman materi.
         - Menyediakan catatan kuliah yang mudah diakses untuk membantu dalam belajar.
-        - Mencatat riwayat jawaban untuk membantu pengguna melacak kemajuan mereka.
+        - Mencatat riwayat jawaban untuk membantu pengguna dalam belajar.
     """)
     
     st.header("Fitur Utama")
@@ -275,10 +275,10 @@ elif menu == "Tentang ℹ️":
     st.header("Tim Pengembang")
     st.write("""
         Aplikasi ini dikembangkan oleh:
-        - **Zulfikar Syahid**: 
-        - **Rizmi Maitri Nurgianti**: 
-        - **Nafisah Nailalhusna I.**: 
-        - **Jane Lazarina Bora Isu**: 
+        - **Zulfikar Syahid**
+        - **Rizmi Maitri Nurgianti**
+        - **Nafisah Nailalhusna I.**
+        - **Jane Lazarina Bora Isu**
     """)
     
     st.header("Kontak")
