@@ -128,14 +128,7 @@ elif menu == "Latihan Soal":
         st.markdown(f"### 🏆 Skor Akhir: *{skor}/{len(soal_data[matkul])}*")
 
 #catatan 
-import streamlit as st
-
-# Ini adalah bagian dari aplikasi Streamlit Anda
-# Asumsi 'menu' adalah 'Catatan Kuliah' dari navigasi sidebar atau sejenisnya
-
-menu = "Catatan Kuliah" # Variabel simulasi untuk menunjukkan bagian yang relevan
-
-if menu == "Catatan Kuliah":
+elif menu == "Catatan Kuliah":
     st.title("📒 Catatan Kuliah")
 
     # Inisialisasi session_state jika belum ada
