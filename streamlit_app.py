@@ -195,7 +195,7 @@ elif menu == "Catatan Kuliah":
             # --- BAGIAN KONTEN DAN GAMBAR ---
             if st.session_state.selected_matkul_simple == "Kimia Fisika":
                 if st.session_state.selected_pertemuan_simple == 1:
-                    st.write("Materi Kimia Fisika Pertemuan 1: Gas.")
+                    st.write("Gas Ideal dan Gas Nyata")
                     st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Notes_250708_103057_1.jpg")
                     st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Notes_250708_103057_2.jpg")
                     st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Notes_250708_103057_3.jpg")
@@ -206,14 +206,14 @@ elif menu == "Catatan Kuliah":
                     st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Notes_250718_152601_2.jpg")
                     
                 elif st.session_state.selected_pertemuan_simple == 2:
-                    st.write("Materi Kimia Fisika Pertemuan 2: Hukum Thermodinamika.")
-                    st.image("https://github.com/fiikar/copy-projek/blob/main/Hukum%20Termodinamika_1.jpg")
-                    st.image("https://github.com/fiikar/copy-projek/blob/main/Hukum%20Termodinamika_2.jpg")
-                    st.image("https://github.com/fiikar/copy-projek/blob/main/Hukum%20Termodinamika_3.jpg")
-                    st.image("https://github.com/fiikar/copy-projek/blob/main/Hukum%20Termodinamika_4.jpg")
-                    st.image("https://github.com/fiikar/copy-projek/blob/main/Hukum%20Termodinamika_5.jpg")
-                    st.image("https://github.com/fiikar/copy-projek/blob/main/Hukum%20Termodinamika_6.jpg")
-            
+                    st.write("Hukum Thermodinamika")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Hukum%20Termodinamika_1.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Hukum%20Termodinamika_2.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Hukum%20Termodinamika_3.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Hukum%20Termodinamika_4.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Hukum%20Termodinamika_5.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Hukum%20Termodinamika_6.jpg")    
+                    
             elif st.session_state.selected_matkul_simple == "Spektrofotometri":
                 if st.session_state.selected_pertemuan_simple == 1:
                     st.write("Materi Spektrofotometri Pertemuan 1: Prinsip Dasar UV-Vis.")
