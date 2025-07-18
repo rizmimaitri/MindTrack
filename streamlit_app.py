@@ -171,11 +171,15 @@ elif menu == "Catatan Kuliah":
             if st.session_state.selected_matkul_simple == "Kimia Fisika":
                 if st.session_state.selected_pertemuan_simple == 1:
                     st.write("Materi Kimia Fisika Pertemuan 1: Pengantar Termodinamika.")
-                    # Contoh menambahkan gambar di sini
-                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Notes_250708_103057_1.jpg", 
-                             caption="Halaman 1", 
-                             width=500) # Sesuaikan width sesuai kebutuhan
-                    st.write("Penjelasan lebih lanjut tentang grafik ini...")
+                    # Foto Catatan
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Notes_250708_103057_1.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Notes_250708_103057_2.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Notes_250708_103057_3.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Notes_250708_103057_4.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Notes_250708_103057_5.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Notes_250708_103057_6.jpg")
+
+                
                 elif st.session_state.selected_pertemuan_simple == 2:
                     st.write("Materi Kimia Fisika Pertemuan 2: Entropi dan Energi Bebas.")
                     # Contoh gambar lain
