@@ -132,7 +132,7 @@ elif menu == "Latihan Soal":
 materi_titles = {
     "Kimia Fisika": {
         1: "Gas Ideal dan Gas Nyata",
-        2: "Hukum Thermodinamika",
+        2: "Hukum Thermodinamika"
     },
     "Spektrofotometri": {
         1: "Spektrofotometri Infrared",
@@ -141,7 +141,7 @@ materi_titles = {
     },
     "Biokimia": {
         1: "Protein",
-        2: "Enzim" 
+        2: "Enzim",
         3: "Antibodi"
     }
 }
