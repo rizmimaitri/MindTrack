@@ -82,24 +82,24 @@ soal_data = {
         {"question": "Daya adalah ?", "options": ["Joule/sekon", "Joule.sekon", "Newton/sekon","Newton.sekon","Joule"], "answer": "Joule/sekon"},
         {"question": "Dua lembah dan dua bukit gelombang sama dengan?", "options": ["1/2 lambda", "1 lambda", "1,5 lambda","2 lambda","2,5 lambda"], "answer": "2 lambda"}, 
         {"question": "Diantara besaran dibawah ini, manakah yang termasuk besaran pokok ?", "options": ["Kecepatan", "Percepatan", "Jumlah zat","Kadar","Energi"], "answer": "Kadar"},
-        {"question": "Pada kasus benda jatuh, energi yang besarnya semakin berkurang adalah?", "options": ["Energi potensial", "Energi kinetik", "Energi gerak","Energi  gesekan","Energi mekanik"], "answer": "Energi mekanin"},
+        {"question": "Pada kasus benda jatuh, energi yang besarnya semakin berkurang adalah?", "options": ["Energi potensial", "Energi kinetik", "Energi gerak","Energi  gesekan","Energi mekanik"], "answer": "Energi mekanik"},
         {"question": "Usaha yang dilakukan oleh gaya gesek selalu bernilai?", "options": ["Positif", "Negatif", "Tergantung kemiringan","Tergantung sudut","Nol"], "answer": "Nol"},
         {"question": "Penulisan simbol yang benar untuk satuan mililiter yaitu?", "options": ["ml", "mL", "Ml","ML","mLiter"], "answer": "mL"},
-        {"question": "Perbandingan massa benda terhada[ volume benda disebut?", "options": ["Berat jenis", "Bobot jenis", "Massa jenis","Massa jenis relative","Specific gravity"], "answer": "Massa jenis"},
+        {"question": "Perbandingan massa benda terhadap volume benda disebut?", "options": ["Berat jenis", "Bobot jenis", "Massa jenis","Massa jenis relative","Specific gravity"], "answer": "Massa jenis"},
         {"question": "Gerak harmonis sederhana memiliki amplitudo yang besarnya?", "options": ["Selalu sama", "Selalu bertambah besar", "Selalu berkurang","Tergantung massa beban","Selalu berubah ubah"], "answer": "Selalu sama"},
-        {"question": "Jika gaya berat benda lebih besar dari gaya apung maka benda akan?", "options": ["Terapung seluruhnya", "Terapung sebagian", "Melayang diatas","Melayang ditengah","Tenggelam di dasar"], "answer": "Melayang diatas"},
+        {"question": "Jika gaya berat benda lebih besar dari gaya apung maka benda akan?", "options": ["Terapung seluruhnya", "Terapung sebagian", "Melayang diatas","Melayang ditengah","Tenggelam di dasar"], "answer": "Tenggelam di dasar"},
         {"question": "Pernyataan di bawah ini yang bukan syarat pasangan gaya bisa disebut aksi reaksi yaitu?", "options": ["Berlawanan arah", "Sama besar", "Bekerja pada benda yang sama","Bekerja pada benda yang berbeda","Semua jawaban benar"], "answer": "Sama besar"},
-        {"question": "Diantara besarab besaran berikut,manakah yang tidak terkait dengan kinematika?", "options": ["Perpindahan", "Waktu", "Percepatan","Gaya","Kecepatan"], "answer": "Gaya"},
+        {"question": "Diantara besarab besaran berikut, manakah yang tidak terkait dengan kinematika?", "options": ["Perpindahan", "Waktu", "Percepatan","Gaya","Kecepatan"], "answer": "Gaya"},
         {"question": "Prinsip.... menyatakan bahwa tekanan yang diberikan pada fluida tertutup akan diteruskan sama besar ke segala arah", "options": ["Pascal", "Bernoulli", "Archimedes","Tegangan permukaan","Viskositas"], "answer": "Pascal"},
-        {"question": "Penyeban perubahan gerak benda adalahh?", "options": ["Usaha", "Gaya", "Energi","Percepatan","Kecepatan"], "answer": "Kecepatan"},
-        {"question": "Suatu thermometer menunjukan suhu 30 Celcius, berapakah dinyatakan dalam skala fahrenheit?", "options": ["78", "54", "86","77","90"], "answer": "78"}, 
+        {"question": "Penyebab perubahan gerak benda adalah?", "options": ["Usaha", "Gaya", "Energi","Percepatan","Kecepatan"], "answer": "Gaya"},
+        {"question": "Suatu thermometer menunjukan suhu 30 Celcius, berapakah dinyatakan dalam skala fahrenheit?", "options": ["78", "54", "86","77","90"], "answer": "86"},
     ]
 }
 
 # Halaman Beranda
 if menu == "Beranda":
     st.title("🧠 MindTrack")
-    st.write("Selamat datang di *MindTrack*, 👋")
+    st.write("Selamat datang di MindTrack, 👋")
     st.write("Sudah Siap Untuk Mulai Belajar?")
     st.info("Gunakan menu di sebelah kiri untuk mulai belajar.")
 
@@ -107,7 +107,7 @@ elif menu == "Latihan Soal":
     st.title("✏ Latihan Soal")
 
     # Pilih Mata Kuliah
-    matkul = st.selectbox("Pilih Mata Kuliah", ["Spektrofotometri", "Kimia Fisika", "Biokimia","Fisika"])
+    matkul = st.selectbox("Pilih Mata Kuliah", ["Spektrofotometri", "Kimia Fisika", "Biokimia", "Fisika"])
 
     # Tampilkan Soal Berdasarkan Mata Kuliah
     st.subheader(f"Soal {matkul}")
@@ -121,12 +121,24 @@ elif menu == "Latihan Soal":
         st.success("Jawaban kamu berhasil dikirim!")
         # Koreksi otomatis
         skor = 0
+        jawaban_salah = []
+
         for index, soal in enumerate(soal_data[matkul]):
             if jawaban[index] == soal["answer"]:
                 skor += 1
+            else:
+                jawaban_salah.append((soal['question'], soal['answer'], jawaban[index]))
 
         # Tampilkan hasil
-        st.markdown(f"### 🏆 Skor Akhir: *{skor}/{len(soal_data[matkul])}*")
+        st.markdown(f"### 🏆 Skor Akhir: {skor}/{len(soal_data[matkul])}")
+
+        # Tampilkan jawaban yang salah beserta jawaban yang benar
+        if jawaban_salah:
+            st.warning("Berikut adalah jawaban yang salah beserta jawaban yang benar:")
+            for soal, jawaban_benar, jawaban_user in jawaban_salah:
+                st.write(f"*Soal:* {soal}")
+                st.write(f"*Jawaban Benar:* {jawaban_benar}")
+                st.write(f"*Jawaban Kamu:* {jawaban_user}")
 
 # Catatan Kuliah
 materi_titles = {
@@ -145,7 +157,6 @@ materi_titles = {
         3: "Antibodi"
     }
 }
-# --- AKHIR DEFINISI JUDUL MATERI ---
 
 if menu == "Catatan Kuliah":
     st.title("📒 Catatan Kuliah")
@@ -176,15 +187,9 @@ if menu == "Catatan Kuliah":
         
         # Menentukan berapa banyak kolom yang dibutuhkan berdasarkan jumlah pertemuan
         num_pertemuan = len(current_matkul_titles)
-        # Jika Anda ingin kolom maksimal 3 per baris, bisa gunakan logika ini:
-        # cols = st.columns(min(num_pertemuan, 3)) # Membatasi maks 3 kolom per baris
-        
-        # Menggunakan jumlah kolom yang sama dengan jumlah pertemuan untuk tata letak yang fleksibel
-        # atau jika num_pertemuan sangat besar, Anda mungkin ingin memecahnya ke beberapa baris
         cols = st.columns(num_pertemuan if num_pertemuan > 0 else 1) # Buat kolom sebanyak jumlah pertemuan
     
         # Loop melalui nomor pertemuan yang ada untuk mata kuliah ini
-        # Mengurutkan kunci agar tombol selalu tampil berurutan (1, 2, 3, ...)
         sorted_pertemuan_nums = sorted(current_matkul_titles.keys()) 
         
         for idx, pertemuan_num in enumerate(sorted_pertemuan_nums):
@@ -201,7 +206,7 @@ if menu == "Catatan Kuliah":
             st.markdown("---")
             konten_subheader_title = current_matkul_titles.get(st.session_state.selected_pertemuan_simple, f"Konten Pertemuan {st.session_state.selected_pertemuan_simple}")
             st.subheader(f"Konten: {konten_subheader_title}")
-            st.write(f"Ini adalah detail untuk **{st.session_state.selected_matkul_simple}** - **{konten_subheader_title}**.")
+            st.write(f"Ini adalah detail untuk *{st.session_state.selected_matkul_simple}* - *{konten_subheader_title}*.")
             
             # --- BAGIAN KONTEN DAN GAMBAR ---
             if st.session_state.selected_matkul_simple == "Kimia Fisika":
@@ -249,7 +254,7 @@ if menu == "Catatan Kuliah":
         else:
             st.info("Silakan pilih materi pertemuan di atas untuk melihat detail.")
     else:
-        st.info("Silakan pilih mata kuliah di atas.")# Halaman Riwayat Jawaban
+        st.info("Silakan pilih mata kuliah di atas.")
 
 # Halaman Riwayat Jawaban
 elif menu == "Riwayat Jawaban":
@@ -264,4 +269,4 @@ elif menu == "Tentang":
     st.write("Zulfikar Syahid")
     st.write("Rizmi Maitri Nurgianti")
     st.write("Nafisah Nailalhusna I.")
-    st.write("Jane Lazarina Bora Isu")
+    st.write("Jane Lazarina Bora Isu")
