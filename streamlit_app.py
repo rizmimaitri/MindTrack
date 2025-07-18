@@ -4,7 +4,7 @@ import streamlit as st
 st.set_page_config(page_title="MindTrack", page_icon="🧠")
 
 # Menu Sidebar
-menu = st.sidebar.selectbox("📚 Pilih Halaman", ["🏠Beranda", "📝Latihan Soal", "📒Catatan Kuliah", "📊Riwayat Jawaban", "ℹ️Tentang"])
+menu = st.sidebar.selectbox("📚 Pilih Halaman", ["Beranda 😊", "Latihan Soal ✏️", "Catatan Kuliah 📒", "Riwayat Jawaban 🗂️", "Tentang ℹ️"])
 
 # Data Soal
 soal_data = {
@@ -97,14 +97,14 @@ soal_data = {
 }
 
 # Halaman Beranda
-if menu == "Beranda":
+if menu == "Beranda 😊":
     st.title("🧠 MindTrack")
     st.write("Selamat datang di MindTrack, 👋")
     st.write("Sudah Siap Untuk Mulai Belajar?")
     st.info("Gunakan menu di sebelah kiri untuk mulai belajar.")
 
-elif menu == "Latihan Soal":
-    st.title("✏ Latihan Soal")
+elif menu == "Latihan Soal ✏️":
+    st.title("✏️ Latihan Soal")
 
     # Pilih Mata Kuliah
     matkul = st.selectbox("Pilih Mata Kuliah", ["Spektrofotometri 🧪", "Kimia Fisika 🔬", "Biokimia 🧬", "Fisika ⚛️"])
@@ -149,7 +149,7 @@ materi_titles = {
     }
 }
 
-if menu == "Catatan Kuliah":
+if menu == "Catatan Kuliah 📒":
     st.title("📒 Catatan Kuliah")
     
     # Inisialisasi session_state jika belum ada
@@ -197,7 +197,7 @@ if menu == "Catatan Kuliah":
             st.markdown("---")
             konten_subheader_title = current_matkul_titles.get(st.session_state.selected_pertemuan_simple, f"Konten Pertemuan {st.session_state.selected_pertemuan_simple}")
             st.subheader(f"Konten: {konten_subheader_title}")
-            st.write(f"Ini adalah detail untuk *{st.session_state.selected_matkul_simple}* - *{konten_subheader_title}*.")
+            st.write(f"Ini adalah detail untuk {st.session_state.selected_matkul_simple} - {konten_subheader_title}.")
             
             # --- BAGIAN KONTEN DAN GAMBAR ---
             if st.session_state.selected_matkul_simple == "Kimia Fisika 🔬":
@@ -248,12 +248,12 @@ if menu == "Catatan Kuliah":
         st.info("Silakan pilih mata kuliah di atas.")
 
 # Halaman Riwayat Jawaban
-elif menu == "Riwayat Jawaban":
+elif menu == "Riwayat Jawaban 🗂️":
     st.title("🗂 Riwayat Jawaban")
     st.write("Di sini akan ditampilkan jawaban-jawaban soal yang pernah kamu kerjakan.")
 
 # Halaman Tentang
-elif menu == "Tentang":
+elif menu == "Tentang ℹ️":
     st.title("ℹ Tentang MindTrack")
     st.write("Website ini dibuat untuk latihan soal dan mencatat materi perkuliahan.")
     st.header("Tentang Pendiri")
