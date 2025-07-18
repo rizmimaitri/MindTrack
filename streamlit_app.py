@@ -1,16 +1,16 @@
 import streamlit as st
 
 # Konfigurasi halaman Streamlit
-st.set_page_config(page_title="MindTrack", page_icon="🧠")
+st.set_page_config(page_title="MindTrack 🧠", page_icon="🧠")
 
 # Menu Sidebar
-menu = st.sidebar.selectbox("📚 Pilih Halaman", ["Beranda", "Latihan Soal", "Catatan Kuliah", "Riwayat Jawaban", "Tentang"])
+menu = st.sidebar.selectbox("📚 Pilih Halaman", ["🏠 Beranda", "✏ Latihan Soal", "📒 Catatan Kuliah", "🗂 Riwayat Jawaban", "ℹ Tentang"])
 
 # Data Soal
 soal_data = {
     "Spektrofotometri": [
-        {"question": "Perbedaan metode analisis secara konvensional dan analisis intrumen adalah sebagai berikut, kecuali ?", "options": ["Metode analisis instrumen digunakan untuk analit dengan konsentrasi rendah, sedangkan metode analisis konvensional digunakan untuk analit konsentrasi tinggi", "Metode analisis instrumen membutuhkan standar sedangkan metode analis konvensional tidak ", "Metode analisis instrumen membutuhkan pemisahan analit secara fisik sedangkan metode analis konvensional tidak ","Metode analisis instrumen memiliki sensitivitas lebih tinggi dengan metode analis konvensional"], "answer": "Metode analisis instrumen membutuhkan pemisahan analit secara fisik sedangkan metode analis konvensional tidak "},
-        {"question": "Jika transmita suatu larutan adalah 19.4% maka absorbansi larutan tersebut adalah?", "options": [" 1.288 ", "1,404 ", "0,806 ","0,712"], "answer": "0,712"},
+        {"question": "Perbedaan metode analisis secara konvensional dan analisis instrumen adalah sebagai berikut, kecuali?", "options": ["Metode analisis instrumen digunakan untuk analit dengan konsentrasi rendah, sedangkan metode analisis konvensional digunakan untuk analit konsentrasi tinggi", "Metode analisis instrumen membutuhkan standar sedangkan metode analisis konvensional tidak", "Metode analisis instrumen membutuhkan pemisahan analit secara fisik sedangkan metode analisis konvensional tidak", "Metode analisis instrumen memiliki sensitivitas lebih tinggi dengan metode analisis konvensional"], "answer": "Metode analisis instrumen membutuhkan pemisahan analit secara fisik sedangkan metode analisis konvensional tidak"},
+        {"question": "Jika transmita suatu larutan adalah 19.4% maka absorbansi larutan tersebut adalah?", "options": ["1.288", "1.404", "0.806", "0.712"], "answer": "0.712"},
         {"question": "Apa itu panjang gelombang?", "options": ["Jarak antara dua puncak gelombang", "Jumlah gelombang per detik", "Energi cahaya"], "answer": "Jarak antara dua puncak gelombang"},
         {"question": "Apa yang dimaksud dengan absorbansi?", "options": ["Jumlah cahaya yang diteruskan", "Jumlah cahaya yang diserap", "Jumlah cahaya yang dipantulkan"], "answer": "Jumlah cahaya yang diserap"},
         {"question": "Apa itu hukum Beer-Lambert?", "options": ["Hubungan antara konsentrasi dan absorbansi", "Hubungan antara suhu dan tekanan", "Hubungan antara volume dan massa"], "answer": "Hubungan antara konsentrasi dan absorbansi"},
@@ -78,39 +78,39 @@ soal_data = {
         {"question": "Apa itu enzim amilase?", "options": ["Enzim yang menguraikan karbohidrat", "Enzim yang menguraikan protein", "Enzim yang menguraikan lemak"], "answer": "Enzim yang menguraikan karbohidrat"},
     ],
     "Fisika": [
-        {"question": "Perpindahan, kecepatan, percepatan, dan gaya termasuk besaran?", "options": ["Skalar", "Vektor", "Turunan","Satuan","Utama"], "answer": "Vektor"},
-        {"question": "Daya adalah ?", "options": ["Joule/sekon", "Joule.sekon", "Newton/sekon","Newton.sekon","Joule"], "answer": "Joule/sekon"},
-        {"question": "Dua lembah dan dua bukit gelombang sama dengan?", "options": ["1/2 lambda", "1 lambda", "1,5 lambda","2 lambda","2,5 lambda"], "answer": "2 lambda"}, 
-        {"question": "Diantara besaran dibawah ini, manakah yang termasuk besaran pokok ?", "options": ["Kecepatan", "Percepatan", "Jumlah zat","Kadar","Energi"], "answer": "Kadar"},
-        {"question": "Pada kasus benda jatuh, energi yang besarnya semakin berkurang adalah?", "options": ["Energi potensial", "Energi kinetik", "Energi gerak","Energi  gesekan","Energi mekanik"], "answer": "Energi mekanik"},
-        {"question": "Usaha yang dilakukan oleh gaya gesek selalu bernilai?", "options": ["Positif", "Negatif", "Tergantung kemiringan","Tergantung sudut","Nol"], "answer": "Nol"},
-        {"question": "Penulisan simbol yang benar untuk satuan mililiter yaitu?", "options": ["ml", "mL", "Ml","ML","mLiter"], "answer": "mL"},
-        {"question": "Perbandingan massa benda terhadap volume benda disebut?", "options": ["Berat jenis", "Bobot jenis", "Massa jenis","Massa jenis relative","Specific gravity"], "answer": "Massa jenis"},
-        {"question": "Gerak harmonis sederhana memiliki amplitudo yang besarnya?", "options": ["Selalu sama", "Selalu bertambah besar", "Selalu berkurang","Tergantung massa beban","Selalu berubah ubah"], "answer": "Selalu sama"},
-        {"question": "Jika gaya berat benda lebih besar dari gaya apung maka benda akan?", "options": ["Terapung seluruhnya", "Terapung sebagian", "Melayang diatas","Melayang ditengah","Tenggelam di dasar"], "answer": "Tenggelam di dasar"},
-        {"question": "Pernyataan di bawah ini yang bukan syarat pasangan gaya bisa disebut aksi reaksi yaitu?", "options": ["Berlawanan arah", "Sama besar", "Bekerja pada benda yang sama","Bekerja pada benda yang berbeda","Semua jawaban benar"], "answer": "Sama besar"},
-        {"question": "Diantara besarab besaran berikut, manakah yang tidak terkait dengan kinematika?", "options": ["Perpindahan", "Waktu", "Percepatan","Gaya","Kecepatan"], "answer": "Gaya"},
-        {"question": "Prinsip.... menyatakan bahwa tekanan yang diberikan pada fluida tertutup akan diteruskan sama besar ke segala arah", "options": ["Pascal", "Bernoulli", "Archimedes","Tegangan permukaan","Viskositas"], "answer": "Pascal"},
-        {"question": "Penyebab perubahan gerak benda adalah?", "options": ["Usaha", "Gaya", "Energi","Percepatan","Kecepatan"], "answer": "Gaya"},
-        {"question": "Suatu thermometer menunjukan suhu 30 Celcius, berapakah dinyatakan dalam skala fahrenheit?", "options": ["78", "54", "86","77","90"], "answer": "86"},
+        {"question": "Perpindahan, kecepatan, percepatan, dan gaya termasuk besaran?", "options": ["Skalar", "Vektor", "Turunan", "Satuan", "Utama"], "answer": "Vektor"},
+        {"question": "Daya adalah?", "options": ["Joule/sekon", "Joule.sekon", "Newton/sekon", "Newton.sekon", "Joule"], "answer": "Joule/sekon"},
+        {"question": "Dua lembah dan dua bukit gelombang sama dengan?", "options": ["1/2 lambda", "1 lambda", "1,5 lambda", "2 lambda", "2,5 lambda"], "answer": "2 lambda"}, 
+        {"question": "Diantara besaran dibawah ini, manakah yang termasuk besaran pokok?", "options": ["Kecepatan", "Percepatan", "Jumlah zat", "Kadar", "Energi"], "answer": "Kadar"},
+        {"question": "Pada kasus benda jatuh, energi yang besarnya semakin berkurang adalah?", "options": ["Energi potensial", "Energi kinetik", "Energi gerak", "Energi gesekan", "Energi mekanik"], "answer": "Energi mekanik"},
+        {"question": "Usaha yang dilakukan oleh gaya gesek selalu bernilai?", "options": ["Positif", "Negatif", "Tergantung kemiringan", "Tergantung sudut", "Nol"], "answer": "Nol"},
+        {"question": "Penulisan simbol yang benar untuk satuan mililiter yaitu?", "options": ["ml", "mL", "Ml", "ML", "mLiter"], "answer": "mL"},
+        {"question": "Perbandingan massa benda terhadap volume benda disebut?", "options": ["Berat jenis", "Bobot jenis", "Massa jenis", "Massa jenis relative", "Specific gravity"], "answer": "Massa jenis"},
+        {"question": "Gerak harmonis sederhana memiliki amplitudo yang besarnya?", "options": ["Selalu sama", "Selalu bertambah besar", "Selalu berkurang", "Tergantung massa beban", "Selalu berubah-ubah"], "answer": "Selalu sama"},
+        {"question": "Jika gaya berat benda lebih besar dari gaya apung maka benda akan?", "options": ["Terapung seluruhnya", "Terapung sebagian", "Melayang di atas", "Melayang di tengah", "Tenggelam di dasar"], "answer": "Tenggelam di dasar"},
+        {"question": "Pernyataan di bawah ini yang bukan syarat pasangan gaya bisa disebut aksi reaksi yaitu?", "options": ["Berlawanan arah", "Sama besar", "Bekerja pada benda yang sama", "Bekerja pada benda yang berbeda", "Semua jawaban benar"], "answer": "Sama besar"},
+        {"question": "Diantara besaran berikut, manakah yang tidak terkait dengan kinematika?", "options": ["Perpindahan", "Waktu", "Percepatan", "Gaya", "Kecepatan"], "answer": "Gaya"},
+        {"question": "Prinsip.... menyatakan bahwa tekanan yang diberikan pada fluida tertutup akan diteruskan sama besar ke segala arah", "options": ["Pascal", "Bernoulli", "Archimedes", "Tegangan permukaan", "Viskositas"], "answer": "Pascal"},
+        {"question": "Penyebab perubahan gerak benda adalah?", "options": ["Usaha", "Gaya", "Energi", "Percepatan", "Kecepatan"], "answer": "Gaya"},
+        {"question": "Suatu thermometer menunjukan suhu 30 Celcius, berapakah dinyatakan dalam skala fahrenheit?", "options": ["78", "54", "86", "77", "90"], "answer": "86"},
     ]
 }
 
 # Halaman Beranda
-if menu == "Beranda":
+if menu == "🏠 Beranda":
     st.title("🧠 MindTrack")
-    st.write("Selamat datang di MindTrack, 👋")
-    st.write("Sudah Siap Untuk Mulai Belajar?")
+    st.write("Selamat datang di *MindTrack*, 👋")
+    st.write("Sudah Siap Untuk Mulai Belajar? 🎉")
     st.info("Gunakan menu di sebelah kiri untuk mulai belajar.")
 
-elif menu == "Latihan Soal":
+elif menu == "✏ Latihan Soal":
     st.title("✏ Latihan Soal")
 
     # Pilih Mata Kuliah
-    matkul = st.selectbox("Pilih Mata Kuliah", ["Spektrofotometri", "Kimia Fisika", "Biokimia", "Fisika"])
+    matkul = st.selectbox("Pilih Mata Kuliah 📖", ["Spektrofotometri", "Kimia Fisika", "Biokimia", "Fisika"])
 
     # Tampilkan Soal Berdasarkan Mata Kuliah
-    st.subheader(f"Soal {matkul}")
+    st.subheader(f"Soal {matkul} 📚")
     jawaban = []
     for index, soal in enumerate(soal_data[matkul]):
         st.subheader(f"{index + 1}. {soal['question']}")
@@ -118,7 +118,7 @@ elif menu == "Latihan Soal":
 
     # TOMBOL KIRIM
     if st.button("✅ Kirim Jawaban"):
-        st.success("Jawaban kamu berhasil dikirim!")
+        st.success("Jawaban kamu berhasil dikirim! 🎉")
         # Koreksi otomatis
         skor = 0
         jawaban_salah = []
@@ -130,15 +130,15 @@ elif menu == "Latihan Soal":
                 jawaban_salah.append((soal['question'], soal['answer'], jawaban[index]))
 
         # Tampilkan hasil
-        st.markdown(f"### 🏆 Skor Akhir: {skor}/{len(soal_data[matkul])}")
+        st.markdown(f"### 🏆 Skor Akhir: *{skor}/{len(soal_data[matkul])}*")
 
         # Tampilkan jawaban yang salah beserta jawaban yang benar
         if jawaban_salah:
             st.warning("Berikut adalah jawaban yang salah beserta jawaban yang benar:")
             for soal, jawaban_benar, jawaban_user in jawaban_salah:
-                st.write(f"*Soal:* {soal}")
-                st.write(f"*Jawaban Benar:* {jawaban_benar}")
-                st.write(f"*Jawaban Kamu:* {jawaban_user}")
+                st.write(f"**Soal:** {soal}")
+                st.write(f"**Jawaban Benar:** {jawaban_benar} ✅")
+                st.write(f"**Jawaban Kamu:** {jawaban_user} ❌")
 
 # Catatan Kuliah
 materi_titles = {
@@ -158,7 +158,7 @@ materi_titles = {
     }
 }
 
-if menu == "Catatan Kuliah":
+if menu == "📒 Catatan Kuliah":
     st.title("📒 Catatan Kuliah")
     
     # Inisialisasi session_state jika belum ada
@@ -169,7 +169,7 @@ if menu == "Catatan Kuliah":
     
     # Dropdown Mata Kuliah
     matkul_options = list(materi_titles.keys())
-    selected_matkul = st.selectbox("Pilih Mata Kuliah", matkul_options, key="matkul_dropdown_simple")
+    selected_matkul = st.selectbox("Pilih Mata Kuliah 📖", matkul_options, key="matkul_dropdown_simple")
     
     # Jika mata kuliah dipilih (saat selectbox berubah)
     if selected_matkul != st.session_state.selected_matkul_simple:
@@ -178,7 +178,7 @@ if menu == "Catatan Kuliah":
     
     # Tampilkan tombol pertemuan hanya jika mata kuliah sudah dipilih
     if st.session_state.selected_matkul_simple:
-        st.subheader(f"Catatan untuk {st.session_state.selected_matkul_simple}")
+        st.subheader(f"Catatan untuk {st.session_state.selected_matkul_simple} 📚")
         st.markdown("---")
         st.write("Pilih Materi Pertemuan:")
         
@@ -206,7 +206,7 @@ if menu == "Catatan Kuliah":
             st.markdown("---")
             konten_subheader_title = current_matkul_titles.get(st.session_state.selected_pertemuan_simple, f"Konten Pertemuan {st.session_state.selected_pertemuan_simple}")
             st.subheader(f"Konten: {konten_subheader_title}")
-            st.write(f"Ini adalah detail untuk *{st.session_state.selected_matkul_simple}* - *{konten_subheader_title}*.")
+            st.write(f"Ini adalah detail untuk **{st.session_state.selected_matkul_simple}** - **{konten_subheader_title}**.")
             
             # --- BAGIAN KONTEN DAN GAMBAR ---
             if st.session_state.selected_matkul_simple == "Kimia Fisika":
@@ -257,16 +257,17 @@ if menu == "Catatan Kuliah":
         st.info("Silakan pilih mata kuliah di atas.")
 
 # Halaman Riwayat Jawaban
-elif menu == "Riwayat Jawaban":
+elif menu == "🗂 Riwayat Jawaban":
     st.title("🗂 Riwayat Jawaban")
     st.write("Di sini akan ditampilkan jawaban-jawaban soal yang pernah kamu kerjakan.")
 
 # Halaman Tentang
-elif menu == "Tentang":
+elif menu == "ℹ Tentang":
     st.title("ℹ Tentang MindTrack")
-    st.write("Website ini dibuat untuk latihan soal dan mencatat materi perkuliahan.")
+    st.write("Website ini dibuat untuk latihan soal dan mencatat materi perkuliahan. 🎓")
     st.header("Tentang Pendiri")
-    st.write("Zulfikar Syahid")
-    st.write("Rizmi Maitri Nurgianti")
-    st.write("Nafisah Nailalhusna I.")
-    st.write("Jane Lazarina Bora Isu")
+    st.write("👤 Zulfikar Syahid")
+    st.write("👤 Rizmi Maitri Nurgianti")
+    st.write("👤 Nafisah Nailalhusna I.")
+    st.write("👤 Jane Lazarina Bora Isu")
+
