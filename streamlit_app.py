@@ -128,6 +128,13 @@ elif menu == "Latihan Soal":
         st.markdown(f"### 🏆 Skor Akhir: *{skor}/{len(soal_data[matkul])}*")
 
 #catatan 
+import streamlit as st
+
+# Ini adalah bagian dari aplikasi Streamlit Anda
+# Asumsi 'menu' adalah 'Catatan Kuliah' dari navigasi sidebar atau sejenisnya
+
+menu = "Catatan Kuliah" # Variabel simulasi untuk menunjukkan bagian yang relevan
+
 if menu == "Catatan Kuliah":
     st.title("📒 Catatan Kuliah")
 
@@ -145,7 +152,6 @@ if menu == "Catatan Kuliah":
     if selected_matkul != st.session_state.selected_matkul_simple:
         st.session_state.selected_matkul_simple = selected_matkul
         st.session_state.selected_pertemuan_simple = None # Reset pertemuan jika matkul berubah
-        # Tidak perlu st.experimental_rerun() di sini, Streamlit akan reruns secara otomatis
 
     # Tampilkan tombol pertemuan hanya jika mata kuliah sudah dipilih
     if st.session_state.selected_matkul_simple:
@@ -157,7 +163,6 @@ if menu == "Catatan Kuliah":
         
         for i in range(1, 4): # Untuk pertemuan 1, 2, 3
             with cols[i-1]:
-                # Gunakan on_click callback untuk mengubah session state
                 def set_pertemuan_simple(pertemuan_num):
                     st.session_state.selected_pertemuan_simple = pertemuan_num
                 
@@ -169,34 +174,50 @@ if menu == "Catatan Kuliah":
             st.subheader(f"Konten Pertemuan {st.session_state.selected_pertemuan_simple}")
             st.write(f"Ini adalah detail untuk **{st.session_state.selected_matkul_simple}** - **Pertemuan {st.session_state.selected_pertemuan_simple}**.")
             
-            # Anda bisa menambahkan logika konten spesifik berdasarkan mata kuliah dan pertemuan di sini
+            # --- BAGIAN INI YANG AKAN ANDA UBAH UNTUK MENAMBAHKAN GAMBAR ---
             if st.session_state.selected_matkul_simple == "Kimia Fisika":
                 if st.session_state.selected_pertemuan_simple == 1:
                     st.write("Materi Kimia Fisika Pertemuan 1: Pengantar Termodinamika.")
+                    # Contoh menambahkan gambar di sini
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Notes_250708_103057_1.jpg", 
+                             caption="Halaman 1", 
+                             width=500) # Sesuaikan width sesuai kebutuhan
+                    st.write("Penjelasan lebih lanjut tentang grafik ini...")
                 elif st.session_state.selected_pertemuan_simple == 2:
                     st.write("Materi Kimia Fisika Pertemuan 2: Entropi dan Energi Bebas.")
+                    # Contoh gambar lain
+                    st.image("URL_GAMBAR_KIMIA_FISIKA_P2_ANDA", caption="Diagram Entropi", width=500)
                 elif st.session_state.selected_pertemuan_simple == 3:
                     st.write("Materi Kimia Fisika Pertemuan 3: Kinetika Reaksi.")
+                    st.image("URL_GAMBAR_KIMIA_FISIKA_P3_ANDA", caption="Grafik Laju Reaksi", width=500)
             
             elif st.session_state.selected_matkul_simple == "Spektrofotometri":
                 if st.session_state.selected_pertemuan_simple == 1:
                     st.write("Materi Spektrofotometri Pertemuan 1: Prinsip Dasar UV-Vis.")
+                    st.image("URL_GAMBAR_SPEKTRO_P1_ANDA", caption="Skema Spektrofotometer", width=500)
                 elif st.session_state.selected_pertemuan_simple == 2:
                     st.write("Materi Spektrofotometri Pertemuan 2: Aplikasi dalam Analisis Kuantitatif.")
+                    st.image("URL_GAMBAR_SPEKTRO_P2_ANDA", caption="Kurva Kalibrasi", width=500)
                 elif st.session_state.selected_pertemuan_simple == 3:
                     st.write("Materi Spektrofotometri Pertemuan 3: Spektrofotometri Serapan Atom (AAS).")
+                    st.image("URL_GAMBAR_SPEKTRO_P3_ANDA", caption="Prinsip AAS", width=500)
             
             elif st.session_state.selected_matkul_simple == "Biokimia":
                 if st.session_state.selected_pertemuan_simple == 1:
                     st.write("Materi Biokimia Pertemuan 1: Struktur Karbohidrat dan Lipid.")
+                    st.image("URL_GAMBAR_BIOKIMIA_P1_ANDA", caption="Struktur Glukosa", width=500)
                 elif st.session_state.selected_pertemuan_simple == 2:
                     st.write("Materi Biokimia Pertemuan 2: Enzim dan Katalisis Biologis.")
+                    st.image("URL_GAMBAR_BIOKIMIA_P2_ANDA", caption="Mekanisme Enzim", width=500)
                 elif st.session_state.selected_pertemuan_simple == 3:
                     st.write("Materi Biokimia Pertemuan 3: Metabolisme Energi.")
+                    st.image("URL_GAMBAR_BIOKIMIA_P3_ANDA", caption="Siklus Krebs", width=500)
         else:
             st.info("Silakan pilih pertemuan di atas untuk melihat detail.")
     else:
-        st.info("Silakan pilih mata kuliah di atas.")# Halaman Riwayat Jawaban
+        st.info("Silakan pilih mata kuliah di atas.")
+
+# Halaman Riwayat Jawaban
 elif menu == "Riwayat Jawaban":
     st.title("🗂 Riwayat Jawaban")
     st.write("Di sini akan ditampilkan jawaban-jawaban soal yang pernah kamu kerjakan.")
