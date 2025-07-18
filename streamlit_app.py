@@ -133,7 +133,7 @@ elif menu == "Catatan Kuliah":
     st.title("📒 Catatan Kuliah")
     materi_titles = {
         "Kimia Fisika": {
-            1: "Pengantar Termodinamika",
+            1: "Gas Ideal dan Gas Nyata",
             2: "Entropi dan Energi Bebas",
             3: "Kinetika Reaksi"
         },
@@ -197,15 +197,17 @@ elif menu == "Catatan Kuliah":
             if st.session_state.selected_matkul_simple == "Kimia Fisika":
                 if st.session_state.selected_pertemuan_simple == 1:
                     st.write("Materi Kimia Fisika Pertemuan 1: Gas.")
-                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Notes_250708_103057_1.jpg", width=500)
-                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Notes_250708_103057_2.jpg", width=500)
-                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Notes_250708_103057_3.jpg", width=500)
-                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Notes_250708_103057_4.jpg", width=500)
-                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Notes_250708_103057_5.jpg", width=500)
-                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Notes_250708_103057_6.jpg", width=500)
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Notes_250708_103057_1.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Notes_250708_103057_2.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Notes_250708_103057_3.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Notes_250708_103057_4.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Notes_250708_103057_5.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Notes_250708_103057_6.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Notes_250718_152601_1.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Notes_250718_152601_2.jpg")
                     
                 elif st.session_state.selected_pertemuan_simple == 2:
-                    st.write("Materi Kimia Fisika Pertemuan 2: Entropi dan Energi Bebas.")
+                    st.write("Materi Kimia Fisika Pertemuan 2: Hukum Thermodinamika.")
                     st.image("URL_GAMBAR_KIMIA_FISIKA_P2_ANDA", caption="Diagram Entropi", width=500)
                 elif st.session_state.selected_pertemuan_simple == 3:
                     st.write("Materi Kimia Fisika Pertemuan 3: Kinetika Reaksi.")
