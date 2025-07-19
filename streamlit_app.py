@@ -238,12 +238,19 @@ if menu == "Catatan Kuliah 📒":
                     st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/FTIR_4.jpg")
                     st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/FTIR_5.jpg")
                     st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/FTIR_6.jpg")
+                    
                 elif st.session_state.selected_pertemuan_simple == 2:
-                    st.write("Materi Spektrofotometri Pertemuan 2: Aplikasi dalam Analisis Kuantitatif.")
-                    st.image("URL_GAMBAR_SPEKTRO_P2_ANDA", caption="Kurva Kalibrasi", width=500)
+                    st.write("Flame Photometry")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Flame_1.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Flame_2.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Flame_3.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Flame_4.jpg")
+                    
                 elif st.session_state.selected_pertemuan_simple == 3:
-                    st.write("Materi Spektrofotometri Pertemuan 3: Spektrofotometri Serapan Atom (AAS).")
-                    st.image("URL_GAMBAR_SPEKTRO_P3_ANDA", caption="Prinsip AAS", width=500)
+                    st.write("ICP AES")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/ICP_1.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/ICP_2.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/ICP_3.jpg")
             
             elif st.session_state.selected_matkul_simple == "Biokimia 🧬":
                 if st.session_state.selected_pertemuan_simple == 1:
