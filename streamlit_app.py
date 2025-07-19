@@ -255,11 +255,6 @@ if menu == "Catatan Kuliah 📒":
     else:
         st.info("Silakan pilih mata kuliah di atas.")
 
-# Halaman Riwayat Jawaban
-elif menu == "Riwayat Jawaban 🗂️":
-    st.title("🗂 Riwayat Jawaban")
-    st.write("Di sini akan ditampilkan jawaban-jawaban soal yang pernah kamu kerjakan.")
-
 # Halaman Tentang
 elif menu == "Tentang ℹ️":
     st.title("ℹ️Tentang MindTrack")
