@@ -231,8 +231,13 @@ if menu == "Catatan Kuliah 📒":
                     
             elif st.session_state.selected_matkul_simple == "Spektrofotometri 🧪":
                 if st.session_state.selected_pertemuan_simple == 1:
-                    st.write("Materi Spektrofotometri Pertemuan 1: Prinsip Dasar UV-Vis.")
-                    st.image("URL_GAMBAR_SPEKTRO_P1_ANDA", caption="Skema Spektrofotometer", width=500)
+                    st.write("Spektrofotometri Infrared")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/FTIR_1.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/FTIR_2.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/FTIR_3.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/FTIR_4.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/FTIR_5.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/FTIR_6.jpg")
                 elif st.session_state.selected_pertemuan_simple == 2:
                     st.write("Materi Spektrofotometri Pertemuan 2: Aplikasi dalam Analisis Kuantitatif.")
                     st.image("URL_GAMBAR_SPEKTRO_P2_ANDA", caption="Kurva Kalibrasi", width=500)
