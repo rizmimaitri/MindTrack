@@ -244,7 +244,6 @@ if menu == "Catatan Kuliah 📒":
                     st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Flame_1.jpg")
                     st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Flame_2.jpg")
                     st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Flame_3.jpg")
-                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Flame_4.jpg")
                     
                 elif st.session_state.selected_pertemuan_simple == 3:
                     st.write("ICP AES")
