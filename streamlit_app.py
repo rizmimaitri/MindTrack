@@ -34,11 +34,11 @@ soal_data = {
         {"question": "Jika suatu materi dikenai radiasi sinar gamma maka yang terjadi adalah?", "options": ["Vibrasi molekul", "Eksitasi elektron pada kulit yang paling dalam", "Eksitasi inti"], "answer": "Eksitasi inti"},
         {"question": "Diantara senyawa berikut yang memiliki seapan pada panjang gelombang yang tertinggi adalah...", "options": ["Metanol", "Heksana", "Aseton"], "answer": "Heksana"},
         {"question": "Detektor dibawah ini manakah yang merupakan detektor yang digunakan pada spektrofotometer?", "options": ["Detektor PMT(Photo Multiplier Tube)", "Detektor FID(Flame Ionization Detector)", "Detektor TCD(Thermal Conductivity Detector"], "answer": "Detektor PMT (Photo Multiplier Tube)"},
-        {"question": "Jika absorbans sampel = 0,007 maka berapa nilai % T?", "options": ["2,00", "20,00", "11,22"], "answer": "20,00"},
+        {"question": "Jika absorbans sampel 0,007 maka berapa nilai % T?", "options": ["2,00", "20,00", "11,22"], "answer": "20,00"},
         {"question": "Pernyataan yang benar tentang persamaan Lambert Beer adalah...", "options": ["Absorptivitas molar tidak dipengaruhi oleh konsentrasi", "Menunjukkan hubungan linier antara absorptivitas dengan konsentrasi", "Menunjukkan hubungan linier antara tebal media dengan konsentrasi"], "answer": "Menunjukkan hubungan linier antara absorptivitas dengan konsentrasi"},
         {"question": "kuvet yang digunakan untuk analisis spektrofotometri harus memiliki syarat syarat sebagaimana berikut,kecuali...", "options": ["Harus tahan api/panas yang tinggi", "Permukaannya secara optis benar benar sejajar", "Tidak menyerap daerah pengukuran"], "answer": "Harus tahan api/panas yang tinggi"},
-        {"question": "Penyimpangan Hukum Lambert Beer daoat disebabkan oleh hal berikut,kecuali...", "options": ["Adanya sesatan cahaya", "Konsentrasi contoh terlalu tinggi", "Terdapat reaksi kesetimbangan namun tidak menjadi pergeseran arah reaksi"], "answer": "Terdapat reaksi kesetimbangan namun tidak menjadi pergeseran arah reaksi"},
-        
+        {"question": "Penyimpangan Hukum Lambert Beer dapat disebabkan oleh hal berikut,kecuali...", "options": ["Adanya sesatan cahaya", "Konsentrasi contoh terlalu tinggi", "Terdapat reaksi kesetimbangan namun tidak menjadi pergeseran arah reaksi"], "answer": "Terdapat reaksi kesetimbangan namun tidak menjadi pergeseran arah reaksi"},
+    ],
     "Kimia Fisika 🔬": [
         {"question": "Apa hukum pertama termodinamika?", "options": ["Energi tidak dapat diciptakan atau dimusnahkan", "Energi dapat diciptakan", "Energi selalu meningkat"], "answer": "Energi tidak dapat diciptakan atau dimusnahkan"},
         {"question": "Apa itu entropi?", "options": ["Ukuran ketidakteraturan", "Ukuran energi", "Ukuran massa"], "answer": "Ukuran ketidakteraturan"},
