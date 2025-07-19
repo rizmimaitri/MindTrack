@@ -151,9 +151,9 @@ materi_titles = {
         3: "ICP AES"
     },
     "Biokimia 🧬": {
-        1: "Protein",
-        2: "Enzim",
-        3: "Antibodi"
+        1: "Karbohidrat",
+        2: "Protein",
+        3: "Enzim"
     }
 }
 
@@ -254,14 +254,20 @@ if menu == "Catatan Kuliah 📒":
             
             elif st.session_state.selected_matkul_simple == "Biokimia 🧬":
                 if st.session_state.selected_pertemuan_simple == 1:
-                    st.write("Materi Biokimia Pertemuan 1: Struktur Karbohidrat dan Lipid.")
-                    st.image("URL_GAMBAR_BIOKIMIA_P1_ANDA", caption="Struktur Glukosa", width=500)
+                    st.write("Karbohidrat")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Karbo_1.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Karbo_2.jpg")
                 elif st.session_state.selected_pertemuan_simple == 2:
-                    st.write("Materi Biokimia Pertemuan 2: Enzim dan Katalisis Biologis.")
-                    st.image("URL_GAMBAR_BIOKIMIA_P2_ANDA", caption="Mekanisme Enzim", width=500)
+                    st.write("Protein")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Protein_1.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Protein_2.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Protein_3.jpg")
                 elif st.session_state.selected_pertemuan_simple == 3:
-                    st.write("Materi Biokimia Pertemuan 3: Metabolisme Energi.")
-                    st.image("URL_GAMBAR_BIOKIMIA_P3_ANDA", caption="Siklus Krebs", width=500)
+                    st.write("Enzim")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Enzim_1.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Enzim_2.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Enzim_3.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Enzim_4.jpg")
         else:
             st.info("Silakan pilih materi pertemuan di atas untuk melihat detail.")
     else:
