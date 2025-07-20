@@ -4,7 +4,7 @@ import streamlit as st
 st.set_page_config(page_title="MindTrack", page_icon="🧠")
 
 # Menu Sidebar
-menu = st.sidebar.selectbox("📚 Pilih Halaman", ["Beranda 🏠", "Latihan Soal ✏", "Catatan Kuliah 📒", "Tentang ℹ"])
+menu = st.sidebar.selectbox("📚 Pilih Halaman", ["Beranda 🏠", "Latihan Soal ✏️", "Catatan Kuliah 📒", "Tentang  ℹ️"])
 
 # Data Soal
 soal_data = {
@@ -40,58 +40,58 @@ soal_data = {
         {"question": "Penyimpangan Hukum Lambert Beer dapat disebabkan oleh hal berikut,kecuali...", "options": ["Adanya sesatan cahaya", "Konsentrasi contoh terlalu tinggi", "Terdapat reaksi kesetimbangan namun tidak menjadi pergeseran arah reaksi"], "answer": "Terdapat reaksi kesetimbangan namun tidak menjadi pergeseran arah reaksi"},
     ],
     "Kimia Fisika 🔬": [
-        {"question": "Apa hukum pertama termodinamika?", "options": ["Energi dapat diciptakan","Energi tidak dapat diciptakan atau dimusnahkan", "Energi tidak dapat diciptakan atau dimusnahkan", "Energi selalu meningkat"], "answer": "Energi tidak dapat diciptakan atau dimusnahkan"},
+        {"question": "Apa hukum pertama termodinamika?", "options": ["Energi tidak dapat diciptakan atau dimusnahkan", "Energi dapat diciptakan", "Energi selalu meningkat"], "answer": "Energi tidak dapat diciptakan atau dimusnahkan"},
         {"question": "Apa itu entropi?", "options": ["Ukuran ketidakteraturan", "Ukuran energi", "Ukuran massa"], "answer": "Ukuran ketidakteraturan"},
         {"question": "Apa yang dimaksud dengan energi potensial?", "options": ["Energi yang dimiliki benda karena posisinya", "Energi yang dimiliki benda karena gerakannya", "Energi yang dihasilkan oleh reaksi kimia"], "answer": "Energi yang dimiliki benda karena posisinya"},
         {"question": "Apa itu energi kinetik?", "options": ["Energi yang dimiliki benda karena gerakannya", "Energi yang dimiliki benda karena posisinya", "Energi yang dihasilkan oleh reaksi kimia"], "answer": "Energi yang dimiliki benda karena gerakannya"},
-        {"question": "Apa yang dimaksud dengan hukum kedua termodinamika?", "options": ["Energi tidak dapat diciptakan atau dimusnahkan","Energi selalu mengalir dari yang panas ke yang dingin", "Energi selalu meningkat"], "answer": "Energi selalu mengalir dari yang panas ke yang dingin"},
+        {"question": "Apa yang dimaksud dengan hukum kedua termodinamika?", "options": ["Energi selalu mengalir dari yang panas ke yang dingin", "Energi tidak dapat diciptakan atau dimusnahkan", "Energi selalu meningkat"], "answer": "Energi selalu mengalir dari yang panas ke yang dingin"},
         {"question": "Apa itu kalor?", "options": ["Energi yang berpindah karena perbedaan suhu", "Energi yang dihasilkan oleh reaksi kimia", "Energi yang dimiliki benda karena posisinya"], "answer": "Energi yang berpindah karena perbedaan suhu"},
         {"question": "Apa yang dimaksud dengan sistem tertutup?", "options": ["Sistem yang tidak dapat bertukar energi dengan lingkungan", "Sistem yang dapat bertukar energi dengan lingkungan", "Sistem yang tidak dapat bertukar materi dengan lingkungan"], "answer": "Sistem yang tidak dapat bertukar energi dengan lingkungan"},
-        {"question": "Apa itu reaksi eksotermik?", "options": ["Reaksi yang menyerap energi","Reaksi yang melepaskan energi", "Reaksi yang tidak melibatkan energi"], "answer": "Reaksi yang melepaskan energi"},
+        {"question": "Apa itu reaksi eksotermik?", "options": ["Reaksi yang melepaskan energi", "Reaksi yang menyerap energi", "Reaksi yang tidak melibatkan energi"], "answer": "Reaksi yang melepaskan energi"},
         {"question": "Apa yang dimaksud dengan reaksi endotermik?", "options": ["Reaksi yang melepaskan energi", "Reaksi yang menyerap energi", "Reaksi yang tidak melibatkan energi"], "answer": "Reaksi yang menyerap energi"},
         {"question": "Apa itu hukum kekekalan energi?", "options": ["Energi tidak dapat diciptakan atau dimusnahkan", "Energi dapat diciptakan", "Energi selalu meningkat"], "answer": "Energi tidak dapat diciptakan atau dimusnahkan"},
-        {"question": "Apa yang dimaksud dengan tekanan?", "options": ["Energi per satuan volume", "Massa per satuan volume","Gaya per satuan luas"], "answer": "Gaya per satuan luas"},
+        {"question": "Apa yang dimaksud dengan tekanan?", "options": ["Gaya per satuan luas", "Energi per satuan volume", "Massa per satuan volume"], "answer": "Gaya per satuan luas"},
         {"question": "Apa itu volume?", "options": ["Ruang yang ditempati oleh suatu benda", "Massa per satuan luas", "Energi per satuan volume"], "answer": "Ruang yang ditempati oleh suatu benda"},
-        {"question": "Apa yang dimaksud dengan suhu?", "options": ["Ukuran massa", "Ukuran energi kinetik rata-rata partikel", "Ukuran volume"], "answer": "Ukuran energi kinetik rata-rata partikel"},
-        {"question": "Apa itu gas ideal?", "options": ["Gas yang tidak memiliki volume", "Gas yang tidak dapat ditekan","Gas yang mengikuti hukum gas ideal"], "answer": "Gas yang mengikuti hukum gas ideal"},
+        {"question": "Apa yang dimaksud dengan suhu?", "options": ["Ukuran energi kinetik rata-rata partikel", "Ukuran massa", "Ukuran volume"], "answer": "Ukuran energi kinetik rata-rata partikel"},
+        {"question": "Apa itu gas ideal?", "options": ["Gas yang mengikuti hukum gas ideal", "Gas yang tidak memiliki volume", "Gas yang tidak dapat ditekan"], "answer": "Gas yang mengikuti hukum gas ideal"},
         {"question": "Apa yang dimaksud dengan hukum Boyle?", "options": ["Tekanan berbanding terbalik dengan volume pada suhu tetap", "Tekanan berbanding lurus dengan volume pada suhu tetap", "Volume berbanding lurus dengan suhu pada tekanan tetap"], "answer": "Tekanan berbanding terbalik dengan volume pada suhu tetap"},
         {"question": "Apa itu hukum Charles?", "options": ["Volume berbanding lurus dengan suhu pada tekanan tetap", "Tekanan berbanding terbalik dengan volume pada suhu tetap", "Volume berbanding terbalik dengan tekanan pada suhu tetap"], "answer": "Volume berbanding lurus dengan suhu pada tekanan tetap"},
         {"question": "Apa yang dimaksud dengan hukum Avogadro?", "options": ["Volume gas berbanding lurus dengan jumlah mol pada suhu dan tekanan tetap", "Tekanan berbanding terbalik dengan volume pada suhu tetap", "Volume berbanding lurus dengan suhu pada tekanan tetap"], "answer": "Volume gas berbanding lurus dengan jumlah mol pada suhu dan tekanan tetap"},
         {"question": "Apa itu energi bebas Gibbs?", "options": ["Energi yang tersedia untuk melakukan kerja", "Energi yang tidak dapat digunakan", "Energi yang dihasilkan oleh reaksi kimia"], "answer": "Energi yang tersedia untuk melakukan kerja"},
         {"question": "Apa yang dimaksud dengan reaksi redoks?", "options": ["Reaksi yang melibatkan transfer elektron", "Reaksi yang tidak melibatkan transfer elektron", "Reaksi yang melibatkan perubahan suhu"], "answer": "Reaksi yang melibatkan transfer elektron"},
-        {"question": "Apa itu katalis?", "options": [ "Zat yang memperlambat reaksi","Zat yang mempercepat reaksi tanpa ikut bereaksi", "Zat yang tidak berpengaruh pada reaksi"], "answer": "Zat yang mempercepat reaksi tanpa ikut bereaksi"},
-        {"question": "Apa yang dimaksud dengan pH?", "options": ["Ukuran konsentrasi", "Ukuran energi", "Ukuran keasaman atau kebasaan suatu larutan"], "answer": "Ukuran keasaman atau kebasaan suatu larutan"},
+        {"question": "Apa itu katalis?", "options": ["Zat yang mempercepat reaksi tanpa ikut bereaksi", "Zat yang memperlambat reaksi", "Zat yang tidak berpengaruh pada reaksi"], "answer": "Zat yang mempercepat reaksi tanpa ikut bereaksi"},
+        {"question": "Apa yang dimaksud dengan pH?", "options": ["Ukuran keasaman atau kebasaan suatu larutan", "Ukuran konsentrasi", "Ukuran energi"], "answer": "Ukuran keasaman atau kebasaan suatu larutan"},
     ],
     "Biokimia 🧬": [
-        {"question": "Apa itu enzim?", "options": ["Katalisator biologis","Zat pewarna", "Zat pengawet"], "answer": "Katalisator biologis"},
-        {"question": "Apa yang dimaksud dengan metabolisme?", "options": ["Proses pembentukan energi", "Proses pengolahan limbah", "Proses penguraian makanan",], "answer": "Proses penguraian makanan"},
-        {"question": "Apa itu asam amino?", "options": ["Penyusun karbohidrat", "Penyusun protein",  "Penyusun lemak"], "answer": "Penyusun protein"},
-        {"question": "Apa yang dimaksud dengan DNA?", "options": ["Zat pewarna", "Zat pengawet", "Materi genetik"], "answer": "Materi genetik"},
-        {"question": "Apa itu RNA?", "options": ["Asam deoksiribonukleat", "Asam ribonukleat", "Asam amino"], "answer": "Asam ribonukleat"},
-        {"question": "Apa yang dimaksud dengan glukosa?", "options": ["Lemak", "Protein", "Karbohidrat sederhana"], "answer": "Karbohidrat sederhana"},
-        {"question": "Apa itu lipid?", "options": ["Zat yang larut dalam air", "Zat yang tidak larut dalam air", "Zat yang tidak berfungsi dalam tubuh"], "answer": "Zat yang tidak larut dalam air"},
+        {"question": "Apa itu enzim?", "options": ["Katalisator biologis", "Zat pewarna", "Zat pengawet"], "answer": "Katalisator biologis"},
+        {"question": "Apa yang dimaksud dengan metabolisme?", "options": ["Proses penguraian makanan", "Proses pembentukan energi", "Proses pengolahan limbah"], "answer": "Proses penguraian makanan"},
+        {"question": "Apa itu asam amino?", "options": ["Penyusun protein", "Penyusun karbohidrat", "Penyusun lemak"], "answer": "Penyusun protein"},
+        {"question": "Apa yang dimaksud dengan DNA?", "options": ["Materi genetik", "Zat pewarna", "Zat pengawet"], "answer": "Materi genetik"},
+        {"question": "Apa itu RNA?", "options": ["Asam ribonukleat", "Asam deoksiribonukleat", "Asam amino"], "answer": "Asam ribonukleat"},
+        {"question": "Apa yang dimaksud dengan glukosa?", "options": ["Karbohidrat sederhana", "Lemak", "Protein"], "answer": "Karbohidrat sederhana"},
+        {"question": "Apa itu lipid?", "options": ["Zat yang tidak larut dalam air", "Zat yang larut dalam air", "Zat yang tidak berfungsi dalam tubuh"], "answer": "Zat yang tidak larut dalam air"},
         {"question": "Apa yang dimaksud dengan karbohidrat?", "options": ["Sumber energi utama", "Sumber protein", "Sumber lemak"], "answer": "Sumber energi utama"},
-        {"question": "Apa itu protein?", "options": ["Sumber energi","Penyusun sel", "Zat pewarna"], "answer": "Penyusun sel"},
+        {"question": "Apa itu protein?", "options": ["Penyusun sel", "Sumber energi", "Zat pewarna"], "answer": "Penyusun sel"},
         {"question": "Apa yang dimaksud dengan metabolisme anaerob?", "options": ["Proses metabolisme tanpa oksigen", "Proses metabolisme dengan oksigen", "Proses metabolisme dengan suhu tinggi"], "answer": "Proses metabolisme tanpa oksigen"},
         {"question": "Apa itu fotosintesis?", "options": ["Proses pembentukan glukosa dari cahaya", "Proses penguraian glukosa", "Proses pembentukan energi dari lemak"], "answer": "Proses pembentukan glukosa dari cahaya"},
         {"question": "Apa yang dimaksud dengan respirasi seluler?", "options": ["Proses penguraian glukosa untuk menghasilkan energi", "Proses pembentukan glukosa", "Proses penguraian lemak"], "answer": "Proses penguraian glukosa untuk menghasilkan energi"},
-        {"question": "Apa itu ATP?", "options": ["Molekul penyimpan lemak", "Molekul penyimpan protein", "Molekul penyimpan energi"], "answer": "Molekul penyimpan energi"},
+        {"question": "Apa itu ATP?", "options": ["Molekul penyimpan energi", "Molekul penyimpan lemak", "Molekul penyimpan protein"], "answer": "Molekul penyimpan energi"},
         {"question": "Apa yang dimaksud dengan enzim katalase?", "options": ["Enzim yang menguraikan hidrogen peroksida", "Enzim yang menguraikan glukosa", "Enzim yang menguraikan lemak"], "answer": "Enzim yang menguraikan hidrogen peroksida"},
-        {"question": "Apa itu hormon?", "options": ["Zat penyusun sel", "Zat pengatur dalam tubuh", "Zat penyimpan energi"], "answer": "Zat pengatur dalam tubuh"},
-        {"question": "Apa yang dimaksud dengan asam lemak?", "options": [ "Penyusun protein", "Penyusun lipid", "Penyusun karbohidrat"], "answer": "Penyusun lipid"},
-        {"question": "Apa itu glikogen?", "options": ["Cadangan energi pada tumbuhan", "Cadangan energi pada bakteri", "Cadangan energi pada hewan"], "answer": "Cadangan energi pada hewan"},
+        {"question": "Apa itu hormon?", "options": ["Zat pengatur dalam tubuh", "Zat penyusun sel", "Zat penyimpan energi"], "answer": "Zat pengatur dalam tubuh"},
+        {"question": "Apa yang dimaksud dengan asam lemak?", "options": ["Penyusun lipid", "Penyusun protein", "Penyusun karbohidrat"], "answer": "Penyusun lipid"},
+        {"question": "Apa itu glikogen?", "options": ["Cadangan energi pada hewan", "Cadangan energi pada tumbuhan", "Cadangan energi pada bakteri"], "answer": "Cadangan energi pada hewan"},
         {"question": "Apa yang dimaksud dengan sel?", "options": ["Unit dasar kehidupan", "Unit dasar energi", "Unit dasar protein"], "answer": "Unit dasar kehidupan"},
         {"question": "Apa itu biokimia?", "options": ["Ilmu tentang reaksi kimia dalam makhluk hidup", "Ilmu tentang reaksi fisika", "Ilmu tentang reaksi kimia dalam benda mati"], "answer": "Ilmu tentang reaksi kimia dalam makhluk hidup"},
         {"question": "Apa yang dimaksud dengan metabolisme aerob?", "options": ["Proses metabolisme dengan oksigen", "Proses metabolisme tanpa oksigen", "Proses metabolisme dengan suhu tinggi"], "answer": "Proses metabolisme dengan oksigen"},
-        {"question": "Apa itu enzim amilase?", "options": ["Enzim yang menguraikan protein", "Enzim yang menguraikan karbohidrat", "Enzim yang menguraikan lemak"], "answer": "Enzim yang menguraikan karbohidrat"},
+        {"question": "Apa itu enzim amilase?", "options": ["Enzim yang menguraikan karbohidrat", "Enzim yang menguraikan protein", "Enzim yang menguraikan lemak"], "answer": "Enzim yang menguraikan karbohidrat"},
     ],
     "Fisika ⚛": [
         {"question": "Perpindahan, kecepatan, percepatan, dan gaya termasuk besaran?", "options": ["Skalar", "Vektor", "Turunan","Satuan","Utama"], "answer": "Vektor"},
         {"question": "Daya adalah ?", "options": ["Joule/sekon", "Joule.sekon", "Newton/sekon","Newton.sekon","Joule"], "answer": "Joule/sekon"},
         {"question": "Dua lembah dan dua bukit gelombang sama dengan?", "options": ["1/2 lambda", "1 lambda", "1,5 lambda","2 lambda","2,5 lambda"], "answer": "2 lambda"}, 
-        {"question": "Diantara besaran dibawah ini, manakah yang termasuk besaran pokok ?", "options": ["Kecepatan", "Percepatan", "Jumlah zat","Kadar","Energi"], "answer": "Jumlah zat"},
-        {"question": "Pada kasus benda jatuh, energi yang besarnya semakin berkurang adalah?", "options": ["Energi potensial", "Energi kinetik", "Energi gerak","Energi  gesekan","Energi mekanik"], "answer": "Energi potensial"},
-        {"question": "Usaha yang dilakukan oleh gaya gesek selalu bernilai?", "options": ["Positif", "Negatif", "Tergantung kemiringan","Tergantung sudut","Nol"], "answer": "Negatif"},
+        {"question": "Diantara besaran dibawah ini, manakah yang termasuk besaran pokok ?", "options": ["Kecepatan", "Percepatan", "Jumlah zat","Kadar","Energi"], "answer": "Kadar"},
+        {"question": "Pada kasus benda jatuh, energi yang besarnya semakin berkurang adalah?", "options": ["Energi potensial", "Energi kinetik", "Energi gerak","Energi  gesekan","Energi mekanik"], "answer": "Energi mekanik"},
+        {"question": "Usaha yang dilakukan oleh gaya gesek selalu bernilai?", "options": ["Positif", "Negatif", "Tergantung kemiringan","Tergantung sudut","Nol"], "answer": "Nol"},
         {"question": "Penulisan simbol yang benar untuk satuan mililiter yaitu?", "options": ["ml", "mL", "Ml","ML","mLiter"], "answer": "mL"},
         {"question": "Perbandingan massa benda terhadap volume benda disebut?", "options": ["Berat jenis", "Bobot jenis", "Massa jenis","Massa jenis relative","Specific gravity"], "answer": "Massa jenis"},
         {"question": "Gerak harmonis sederhana memiliki amplitudo yang besarnya?", "options": ["Selalu sama", "Selalu bertambah besar", "Selalu berkurang","Tergantung massa beban","Selalu berubah ubah"], "answer": "Selalu sama"},
@@ -104,25 +104,6 @@ soal_data = {
     ]
 }
 
-#Judul Matkul dan Materi Catatan
-materi_titles = {
-    "Kimia Fisika 🔬": {
-        1: "Gas Ideal dan Gas Nyata",
-        2: "Hukum Thermodinamika"
-    },
-    "Spektrofotometri 🧪": {
-        1: "Spektrofotometri Infrared",
-        2: "Flame Photometry",
-        3: "ICP AES"
-    },
-    "Biokimia 🧬": {
-        1: "Karbohidrat",
-        2: "Protein",
-        3: "Enzim"
-    }
-}
-
-
 # Halaman Beranda
 if menu == "Beranda 🏠":
     st.title("🧠 MindTrack")
@@ -130,8 +111,8 @@ if menu == "Beranda 🏠":
     st.write("Sudah Siap Untuk Mulai Belajar?")
     st.info("Gunakan menu di sebelah kiri untuk mulai belajar.")
 
-elif menu == "Latihan Soal ✏":
-    st.title("✏ Latihan Soal")
+elif menu == "Latihan Soal ✏️":
+    st.title("✏️ Latihan Soal")
 
     # Pilih Mata Kuliah
     matkul = st.selectbox("Pilih Mata Kuliah", ["Spektrofotometri 🧪", "Kimia Fisika 🔬", "Biokimia 🧬", "Fisika ⚛"])
@@ -159,15 +140,32 @@ elif menu == "Latihan Soal ✏":
         st.markdown(f"### 🏆 Skor Akhir: {skor}/{len(soal_data[matkul])}")
 
 # Catatan Kuliah
-elif menu == "Catatan Kuliah 📒":
-    st.title("📒 Catatan Kuliah")
+materi_titles = {
+    "Kimia Fisika 🔬": {
+        1: "Gas Ideal dan Gas Nyata",
+        2: "Hukum Thermodinamika"
+    },
+    "Spektrofotometri 🧪": {
+        1: "Spektrofotometri Infrared",
+        2: "Flame Photometry",
+        3: "ICP AES"
+    },
+    "Biokimia 🧬": {
+        1: "Karbohidrat",
+        2: "Protein",
+        3: "Enzim"
+    }
+}
 
+if menu == "Catatan Kuliah 📒":
+    st.title("📒 Catatan Kuliah")
+    
     # Inisialisasi session_state jika belum ada
     if "selected_matkul_simple" not in st.session_state:
         st.session_state.selected_matkul_simple = None
     if "selected_pertemuan_simple" not in st.session_state:
         st.session_state.selected_pertemuan_simple = None
-        
+    
     # Dropdown Mata Kuliah
     matkul_options = list(materi_titles.keys())
     selected_matkul = st.selectbox("Pilih Mata Kuliah", matkul_options, key="matkul_dropdown_simple")
@@ -275,8 +273,8 @@ elif menu == "Catatan Kuliah 📒":
         st.info("Silakan pilih mata kuliah di atas.")
 
 # Halaman Tentang
-elif menu == "Tentang ℹ":
-    st.title("ℹTentang MindTrack")
+elif menu == "Tentang ℹ️":
+    st.title("ℹ️Tentang MindTrack")
     st.write("MindTrack adalah sebuah web yang dirancang untuk membantu mahasiswa khusunya di lingkungan Politeiknik AKA Bogor dalam memahami konsep-konsep penting di mata kuliah teori.")
     
     st.header("Tujuan Aplikasi")
