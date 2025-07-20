@@ -296,10 +296,14 @@ elif menu == "Tentang ℹ️":
     st.header("Tim Pengembang")
     st.write("""
         Aplikasi ini dikembangkan oleh:
-        - *Zulfikar Syahid.*
-        - *Rizmi Maitri Nurgianti.*
-        - *Nafisah Nailalhusna Isbandi.*
         - *Jane Lazarina Bora Isu.*
+            NIM: 2460394
+        - *Nafisah Nailalhusna Isbandi.*
+            NIM : 2460453
+        - *Rizmi Maitri Nurgianti.*
+            NIM : 2460504
+        - *Zulfikar Syahid.*
+            NIM : 2460549
     """)
     
     st.header("Kontak")
