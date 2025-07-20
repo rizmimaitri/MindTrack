@@ -3,6 +3,27 @@ import streamlit as st
 # Konfigurasi halaman Streamlit
 st.set_page_config(page_title="MindTrack", page_icon="🧠")
 
+# Menambahkan CSS untuk styling
+st.markdown(
+    """
+    <style>
+    .title {
+        color: #4CAF50;  /* Warna hijau */
+        font-size: 40px;
+        text-align: center;
+    }
+    .sidebar .sidebar-content {
+        background-color: #f0f0f0;  /* Warna latar sidebar */
+    }
+    .header {
+        color: #007BFF;  /* Warna biru */
+        font-size: 24px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 # Menu Sidebar
 menu = st.sidebar.selectbox("📚 Pilih Halaman", ["Beranda 🏠", "Latihan Soal ✏️", "Catatan Kuliah 📒", "Tentang ℹ️"])
 
@@ -104,7 +125,7 @@ soal_data = {
     ]
 }
 
-#Judul Matkul dan Materi Catatan
+# Judul Matkul dan Materi Catatan
 materi_titles = {
     "Kimia Fisika 🔬": {
         1: "Gas Ideal dan Gas Nyata",
@@ -122,10 +143,9 @@ materi_titles = {
     }
 }
 
-
 # Halaman Beranda
 if menu == "Beranda 🏠":
-    st.title("🧠 MindTrack")
+    st.markdown('<h1 class="title">🧠 MindTrack</h1>', unsafe_allow_html=True)
     st.write("Selamat datang di MindTrack, 👋")
     st.write("Sudah Siap Untuk Mulai Belajar?")
     st.info("Gunakan menu di sebelah kiri untuk mulai belajar.")
@@ -276,8 +296,8 @@ elif menu == "Catatan Kuliah 📒":
 
 # Halaman Tentang
 elif menu == "Tentang ℹ️":
-    st.title("ℹ️Tentang MindTrack")
-    st.write("MindTrack adalah sebuah web yang dirancang untuk membantu mahasiswa khusunya di lingkungan Politeiknik AKA Bogor dalam memahami konsep-konsep penting di mata kuliah teori.")
+    st.title("ℹ️ Tentang MindTrack")
+    st.write("MindTrack adalah sebuah web yang dirancang untuk membantu mahasiswa khususnya di lingkungan Politeknik AKA Bogor dalam memahami konsep-konsep penting di mata kuliah teori.")
     
     st.header("Tujuan Aplikasi")
     st.write("""
@@ -285,7 +305,7 @@ elif menu == "Tentang ℹ️":
         - Menyediakan latihan soal yang bervariasi untuk meningkatkan pemahaman.
         - Menyediakan catatan kuliah yang mudah diakses untuk membantu dalam belajar.
         - Membantu mempersiapkan diri untuk menghadapi UTS maupun UAS 
-        """)
+    """)
     
     st.header("Fitur Utama")
     st.write("""
