@@ -162,7 +162,7 @@ elif menu == "Latihan Soal ✏️":
 elif menu == "Catatan Kuliah 📒":
     st.title("📒 Catatan Kuliah")
     
-    # Inisialisasi session_state jika belum ada
+    # Inisialisasi mini memori
     if "selected_matkul_simple" not in st.session_state:
         st.session_state.selected_matkul_simple = None
     if "selected_pertemuan_simple" not in st.session_state:
@@ -172,34 +172,34 @@ elif menu == "Catatan Kuliah 📒":
     matkul_options = list(materi_titles.keys())
     selected_matkul = st.selectbox("Pilih Mata Kuliah", matkul_options, key="matkul_dropdown_simple")
     
-    # Jika mata kuliah dipilih (saat selectbox berubah)
+    # Jika mata kuliah dipilih 
     if selected_matkul != st.session_state.selected_matkul_simple:
         st.session_state.selected_matkul_simple = selected_matkul
-        st.session_state.selected_pertemuan_simple = None # Reset pertemuan jika matkul berubah
+        st.session_state.selected_pertemuan_simple = None 
     
-    # Tampilkan tombol pertemuan hanya jika mata kuliah sudah dipilih
+    # Tombol pertemuan
     if st.session_state.selected_matkul_simple:
         st.subheader(f"Catatan untuk {st.session_state.selected_matkul_simple}")
         st.markdown("---")
         st.write("Pilih Materi Pertemuan:")
         
-        # Mendapatkan judul materi untuk mata kuliah yang sedang dipilih
+        # Menganbil Data Materi
         current_matkul_titles = materi_titles.get(st.session_state.selected_matkul_simple, {})
         
-        # Menentukan berapa banyak kolom yang dibutuhkan berdasarkan jumlah pertemuan
+        # Tombol yang dibutuhkan
         num_pertemuan = len(current_matkul_titles)
-        cols = st.columns(num_pertemuan if num_pertemuan > 0 else 1) # Buat kolom sebanyak jumlah pertemuan
+        cols = st.columns(num_pertemuan if num_pertemuan > 0 else 1) #agar tombol horizontal, dibuat kolom
     
         # Loop melalui nomor pertemuan yang ada untuk mata kuliah ini
         sorted_pertemuan_nums = sorted(current_matkul_titles.keys()) 
         
         for idx, pertemuan_num in enumerate(sorted_pertemuan_nums):
-            with cols[idx]: # Menggunakan indeks untuk menempatkan tombol di kolom yang berbeda
+            with cols[idx]: 
                 button_label = current_matkul_titles.get(pertemuan_num, f"Pertemuan {pertemuan_num}")
                 
-                def set_pertemuan_simple_callback(p_num): # Ganti nama fungsi callback agar tidak bentrok
+                def set_pertemuan_simple_callback(p_num):
                     st.session_state.selected_pertemuan_simple = p_num
-                
+                #tombol pertemuan
                 st.button(button_label, key=f"materi_btn_simple_{pertemuan_num}", on_click=set_pertemuan_simple_callback, args=(pertemuan_num,))
     
         # Menampilkan Konten Pertemuan
@@ -209,7 +209,7 @@ elif menu == "Catatan Kuliah 📒":
             st.subheader(f"Konten: {konten_subheader_title}")
             st.write(f"Ini adalah detail untuk {st.session_state.selected_matkul_simple} - {konten_subheader_title}.")
             
-            # --- BAGIAN KONTEN DAN GAMBAR ---
+            # konten dan gambar
             if st.session_state.selected_matkul_simple == "Kimia Fisika 🔬":
                 if st.session_state.selected_pertemuan_simple == 1:
                     st.write("Gas Ideal dan Gas Nyata")
