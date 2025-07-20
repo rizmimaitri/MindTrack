@@ -104,6 +104,25 @@ soal_data = {
     ]
 }
 
+#Data Judul Catatan
+materi_titles = {
+    "Kimia Fisika 🔬": {
+        1: "Gas Ideal dan Gas Nyata",
+        2: "Hukum Thermodinamika"
+    },
+    "Spektrofotometri 🧪": {
+        1: "Spektrofotometri Infrared",
+        2: "Flame Photometry",
+        3: "ICP AES"
+    },
+    "Biokimia 🧬": {
+        1: "Karbohidrat",
+        2: "Protein",
+        3: "Enzim"
+    }
+}
+
+
 # Halaman Beranda
 if menu == "Beranda 🏠":
     st.title("🧠 MindTrack")
@@ -140,24 +159,7 @@ elif menu == "Latihan Soal ✏️":
         st.markdown(f"### 🏆 Skor Akhir: {skor}/{len(soal_data[matkul])}")
 
 # Catatan Kuliah
-materi_titles = {
-    "Kimia Fisika 🔬": {
-        1: "Gas Ideal dan Gas Nyata",
-        2: "Hukum Thermodinamika"
-    },
-    "Spektrofotometri 🧪": {
-        1: "Spektrofotometri Infrared",
-        2: "Flame Photometry",
-        3: "ICP AES"
-    },
-    "Biokimia 🧬": {
-        1: "Karbohidrat",
-        2: "Protein",
-        3: "Enzim"
-    }
-}
-
-if menu == "Catatan Kuliah 📒":
+elif menu == "Catatan Kuliah 📒":
     st.title("📒 Catatan Kuliah")
     
     # Inisialisasi session_state jika belum ada
