@@ -3,39 +3,8 @@ import streamlit as st
 # Konfigurasi halaman Streamlit
 st.set_page_config(page_title="MindTrack", page_icon="🧠")
 
-# Menambahkan CSS untuk styling
-st.markdown(
-    """
-    <style>
-    body {
-        background-color: #f0f8ff;  /* Warna latar belakang */
-    }
-    .title {
-        color: #4CAF50;  /* Warna hijau */
-        font-size: 40px;
-        text-align: center;
-    }
-    .sidebar .sidebar-content {
-        background-color: #e0f7fa;  /* Warna latar sidebar */
-    }
-    .header {
-        color: #007BFF;  /* Warna biru */
-        font-size: 24px;
-    }
-    .question {
-        font-weight: bold;
-        color: #333;
-    }
-    .option {
-        color: #555;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
 # Menu Sidebar
-menu = st.sidebar.selectbox("📚 Pilih Halaman", ["Beranda 🏠", "Latihan Soal ✏️", "Catatan Kuliah 📒", "Tentang ℹ️"])
+menu = st.sidebar.selectbox("📚 Pilih Halaman", ["Beranda 🏠", "Latihan Soal ✏", "Catatan Kuliah 📒", "Tentang ℹ"])
 
 # Data Soal
 soal_data = {
@@ -106,5 +75,237 @@ soal_data = {
         {"question": "Apa yang dimaksud dengan metabolisme anaerob?", "options": ["Proses metabolisme tanpa oksigen", "Proses metabolisme dengan oksigen", "Proses metabolisme dengan suhu tinggi"], "answer": "Proses metabolisme tanpa oksigen"},
         {"question": "Apa itu fotosintesis?", "options": ["Proses pembentukan glukosa dari cahaya", "Proses penguraian glukosa", "Proses pembentukan energi dari lemak"], "answer": "Proses pembentukan glukosa dari cahaya"},
         {"question": "Apa yang dimaksud dengan respirasi seluler?", "options": ["Proses penguraian glukosa untuk menghasilkan energi", "Proses pembentukan glukosa", "Proses penguraian lemak"], "answer": "Proses penguraian glukosa untuk menghasilkan energi"},
-        
+        {"question": "Apa itu ATP?", "options": ["Molekul penyimpan lemak", "Molekul penyimpan protein", "Molekul penyimpan energi"], "answer": "Molekul penyimpan energi"},
+        {"question": "Apa yang dimaksud dengan enzim katalase?", "options": ["Enzim yang menguraikan hidrogen peroksida", "Enzim yang menguraikan glukosa", "Enzim yang menguraikan lemak"], "answer": "Enzim yang menguraikan hidrogen peroksida"},
+        {"question": "Apa itu hormon?", "options": ["Zat penyusun sel", "Zat pengatur dalam tubuh", "Zat penyimpan energi"], "answer": "Zat pengatur dalam tubuh"},
+        {"question": "Apa yang dimaksud dengan asam lemak?", "options": [ "Penyusun protein", "Penyusun lipid", "Penyusun karbohidrat"], "answer": "Penyusun lipid"},
+        {"question": "Apa itu glikogen?", "options": ["Cadangan energi pada tumbuhan", "Cadangan energi pada bakteri", "Cadangan energi pada hewan"], "answer": "Cadangan energi pada hewan"},
+        {"question": "Apa yang dimaksud dengan sel?", "options": ["Unit dasar kehidupan", "Unit dasar energi", "Unit dasar protein"], "answer": "Unit dasar kehidupan"},
+        {"question": "Apa itu biokimia?", "options": ["Ilmu tentang reaksi kimia dalam makhluk hidup", "Ilmu tentang reaksi fisika", "Ilmu tentang reaksi kimia dalam benda mati"], "answer": "Ilmu tentang reaksi kimia dalam makhluk hidup"},
+        {"question": "Apa yang dimaksud dengan metabolisme aerob?", "options": ["Proses metabolisme dengan oksigen", "Proses metabolisme tanpa oksigen", "Proses metabolisme dengan suhu tinggi"], "answer": "Proses metabolisme dengan oksigen"},
+        {"question": "Apa itu enzim amilase?", "options": ["Enzim yang menguraikan protein", "Enzim yang menguraikan karbohidrat", "Enzim yang menguraikan lemak"], "answer": "Enzim yang menguraikan karbohidrat"},
+    ],
+    "Fisika ⚛": [
+        {"question": "Perpindahan, kecepatan, percepatan, dan gaya termasuk besaran?", "options": ["Skalar", "Vektor", "Turunan","Satuan","Utama"], "answer": "Vektor"},
+        {"question": "Daya adalah ?", "options": ["Joule/sekon", "Joule.sekon", "Newton/sekon","Newton.sekon","Joule"], "answer": "Joule/sekon"},
+        {"question": "Dua lembah dan dua bukit gelombang sama dengan?", "options": ["1/2 lambda", "1 lambda", "1,5 lambda","2 lambda","2,5 lambda"], "answer": "2 lambda"}, 
+        {"question": "Diantara besaran dibawah ini, manakah yang termasuk besaran pokok ?", "options": ["Kecepatan", "Percepatan", "Jumlah zat","Kadar","Energi"], "answer": "Jumlah zat"},
+        {"question": "Pada kasus benda jatuh, energi yang besarnya semakin berkurang adalah?", "options": ["Energi potensial", "Energi kinetik", "Energi gerak","Energi  gesekan","Energi mekanik"], "answer": "Energi potensial"},
+        {"question": "Usaha yang dilakukan oleh gaya gesek selalu bernilai?", "options": ["Positif", "Negatif", "Tergantung kemiringan","Tergantung sudut","Nol"], "answer": "Negatif"},
+        {"question": "Penulisan simbol yang benar untuk satuan mililiter yaitu?", "options": ["ml", "mL", "Ml","ML","mLiter"], "answer": "mL"},
+        {"question": "Perbandingan massa benda terhadap volume benda disebut?", "options": ["Berat jenis", "Bobot jenis", "Massa jenis","Massa jenis relative","Specific gravity"], "answer": "Massa jenis"},
+        {"question": "Gerak harmonis sederhana memiliki amplitudo yang besarnya?", "options": ["Selalu sama", "Selalu bertambah besar", "Selalu berkurang","Tergantung massa beban","Selalu berubah ubah"], "answer": "Selalu sama"},
+        {"question": "Jika gaya berat benda lebih besar dari gaya apung maka benda akan?", "options": ["Terapung seluruhnya", "Terapung sebagian", "Melayang diatas","Melayang ditengah","Tenggelam di dasar"], "answer": "Tenggelam di dasar"},
+        {"question": "Pernyataan di bawah ini yang bukan syarat pasangan gaya bisa disebut aksi reaksi yaitu?", "options": ["Berlawanan arah", "Sama besar", "Bekerja pada benda yang sama","Bekerja pada benda yang berbeda","Semua jawaban benar"], "answer": "Sama besar"},
+        {"question": "Diantara besarab besaran berikut, manakah yang tidak terkait dengan kinematika?", "options": ["Perpindahan", "Waktu", "Percepatan","Gaya","Kecepatan"], "answer": "Gaya"},
+        {"question": "Prinsip.... menyatakan bahwa tekanan yang diberikan pada fluida tertutup akan diteruskan sama besar ke segala arah", "options": ["Pascal", "Bernoulli", "Archimedes","Tegangan permukaan","Viskositas"], "answer": "Pascal"},
+        {"question": "Penyebab perubahan gerak benda adalah?", "options": ["Usaha", "Gaya", "Energi","Percepatan","Kecepatan"], "answer": "Gaya"},
+        {"question": "Suatu thermometer menunjukan suhu 30 Celcius, berapakah dinyatakan dalam skala fahrenheit?", "options": ["78", "54", "86","77","90"], "answer": "86"},
+    ]
+}
 
+#Judul Matkul dan Materi Catatan
+materi_titles = {
+    "Kimia Fisika 🔬": {
+        1: "Gas Ideal dan Gas Nyata",
+        2: "Hukum Thermodinamika"
+    },
+    "Spektrofotometri 🧪": {
+        1: "Spektrofotometri Infrared",
+        2: "Flame Photometry",
+        3: "ICP AES"
+    },
+    "Biokimia 🧬": {
+        1: "Karbohidrat",
+        2: "Protein",
+        3: "Enzim"
+    }
+}
+
+
+# Halaman Beranda
+if menu == "Beranda 🏠":
+    st.title("🧠 MindTrack")
+    st.write("Selamat datang di MindTrack, 👋")
+    st.write("Sudah Siap Untuk Mulai Belajar?")
+    st.info("Gunakan menu di sebelah kiri untuk mulai belajar.")
+
+elif menu == "Latihan Soal ✏":
+    st.title("✏ Latihan Soal")
+
+    # Pilih Mata Kuliah
+    matkul = st.selectbox("Pilih Mata Kuliah", ["Spektrofotometri 🧪", "Kimia Fisika 🔬", "Biokimia 🧬", "Fisika ⚛"])
+
+    # Tampilkan Soal Berdasarkan Mata Kuliah
+    st.subheader(f"Soal {matkul}")
+    jawaban = []
+    for index, soal in enumerate(soal_data[matkul]):
+        st.subheader(f"{index + 1}. {soal['question']}")
+        jawaban.append(st.radio("Pilih jawaban:", soal["options"], key=f"soal_{matkul}_{index}"))
+
+    # TOMBOL KIRIM
+    if st.button("✅ Kirim Jawaban"):
+        st.success("Jawaban kamu berhasil dikirim!")
+        # Koreksi otomatis
+        skor = 0
+        for index, soal in enumerate(soal_data[matkul]):
+            if jawaban[index] == soal["answer"]:
+                skor += 1
+            else:
+                # Tampilkan jawaban yang benar jika salah
+                st.error(f"Jawaban kamu untuk soal {index + 1} salah. Jawaban yang benar adalah: {soal['answer']}")
+
+        # Tampilkan hasil
+        st.markdown(f"### 🏆 Skor Akhir: {skor}/{len(soal_data[matkul])}")
+
+# Catatan Kuliah
+elif menu == "Catatan Kuliah 📒":
+    st.title("📒 Catatan Kuliah")
+
+    # Inisialisasi session_state jika belum ada
+    if "selected_matkul_simple" not in st.session_state:
+        st.session_state.selected_matkul_simple = None
+    if "selected_pertemuan_simple" not in st.session_state:
+        st.session_state.selected_pertemuan_simple = None
+        
+    # Dropdown Mata Kuliah
+    matkul_options = list(materi_titles.keys())
+    selected_matkul = st.selectbox("Pilih Mata Kuliah", matkul_options, key="matkul_dropdown_simple")
+    
+    # Jika mata kuliah dipilih (saat selectbox berubah)
+    if selected_matkul != st.session_state.selected_matkul_simple:
+        st.session_state.selected_matkul_simple = selected_matkul
+        st.session_state.selected_pertemuan_simple = None # Reset pertemuan jika matkul berubah
+    
+    # Tampilkan tombol pertemuan hanya jika mata kuliah sudah dipilih
+    if st.session_state.selected_matkul_simple:
+        st.subheader(f"Catatan untuk {st.session_state.selected_matkul_simple}")
+        st.markdown("---")
+        st.write("Pilih Materi Pertemuan:")
+        
+        # Mendapatkan judul materi untuk mata kuliah yang sedang dipilih
+        current_matkul_titles = materi_titles.get(st.session_state.selected_matkul_simple, {})
+        
+        # Menentukan berapa banyak kolom yang dibutuhkan berdasarkan jumlah pertemuan
+        num_pertemuan = len(current_matkul_titles)
+        cols = st.columns(num_pertemuan if num_pertemuan > 0 else 1) # Buat kolom sebanyak jumlah pertemuan
+    
+        # Loop melalui nomor pertemuan yang ada untuk mata kuliah ini
+        sorted_pertemuan_nums = sorted(current_matkul_titles.keys()) 
+        
+        for idx, pertemuan_num in enumerate(sorted_pertemuan_nums):
+            with cols[idx]: # Menggunakan indeks untuk menempatkan tombol di kolom yang berbeda
+                button_label = current_matkul_titles.get(pertemuan_num, f"Pertemuan {pertemuan_num}")
+                
+                def set_pertemuan_simple_callback(p_num): # Ganti nama fungsi callback agar tidak bentrok
+                    st.session_state.selected_pertemuan_simple = p_num
+                
+                st.button(button_label, key=f"materi_btn_simple_{pertemuan_num}", on_click=set_pertemuan_simple_callback, args=(pertemuan_num,))
+    
+        # Menampilkan Konten Pertemuan
+        if st.session_state.selected_pertemuan_simple:
+            st.markdown("---")
+            konten_subheader_title = current_matkul_titles.get(st.session_state.selected_pertemuan_simple, f"Konten Pertemuan {st.session_state.selected_pertemuan_simple}")
+            st.subheader(f"Konten: {konten_subheader_title}")
+            st.write(f"Ini adalah detail untuk {st.session_state.selected_matkul_simple} - {konten_subheader_title}.")
+            
+            # --- BAGIAN KONTEN DAN GAMBAR ---
+            if st.session_state.selected_matkul_simple == "Kimia Fisika 🔬":
+                if st.session_state.selected_pertemuan_simple == 1:
+                    st.write("Gas Ideal dan Gas Nyata")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Notes_250708_103057_1.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Notes_250708_103057_2.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Notes_250708_103057_3.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Notes_250708_103057_4.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Notes_250708_103057_5.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Notes_250708_103057_6.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Notes_250718_152601_1.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Notes_250718_152601_2.jpg")
+                    
+                elif st.session_state.selected_pertemuan_simple == 2:
+                    st.write("Hukum Thermodinamika")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Hukum%20Termodinamika_1.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Hukum%20Termodinamika_2.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Hukum%20Termodinamika_3.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Hukum%20Termodinamika_4.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Hukum%20Termodinamika_5.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Hukum%20Termodinamika_6.jpg")    
+                    
+            elif st.session_state.selected_matkul_simple == "Spektrofotometri 🧪":
+                if st.session_state.selected_pertemuan_simple == 1:
+                    st.write("Spektrofotometri Infrared")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/FTIR_1.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/FTIR_2.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/FTIR_3.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/FTIR_4.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/FTIR_5.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/FTIR_6.jpg")
+                    
+                elif st.session_state.selected_pertemuan_simple == 2:
+                    st.write("Flame Photometry")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Flame_1.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Flame_2.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Flame_3.jpg")
+                    
+                elif st.session_state.selected_pertemuan_simple == 3:
+                    st.write("ICP AES")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/ICP_1.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/ICP_2.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/ICP_3.jpg")
+            
+            elif st.session_state.selected_matkul_simple == "Biokimia 🧬":
+                if st.session_state.selected_pertemuan_simple == 1:
+                    st.write("Karbohidrat")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Karbo_1.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Karbo_2.jpg")
+                elif st.session_state.selected_pertemuan_simple == 2:
+                    st.write("Protein")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Protein_1.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Protein_2.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Protein_3.jpg")
+                elif st.session_state.selected_pertemuan_simple == 3:
+                    st.write("Enzim")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Enzim_1.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Enzim_2.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Enzim_3.jpg")
+                    st.image("https://raw.githubusercontent.com/fiikar/copy-projek/main/Enzim_4.jpg")
+        else:
+            st.info("Silakan pilih materi pertemuan di atas untuk melihat detail.")
+    else:
+        st.info("Silakan pilih mata kuliah di atas.")
+
+# Halaman Tentang
+elif menu == "Tentang ℹ":
+    st.title("ℹTentang MindTrack")
+    st.write("MindTrack adalah sebuah web yang dirancang untuk membantu mahasiswa khusunya di lingkungan Politeiknik AKA Bogor dalam memahami konsep-konsep penting di mata kuliah teori.")
+    
+    st.header("Tujuan Aplikasi")
+    st.write("""
+        Aplikasi ini bertujuan untuk:
+        - Menyediakan latihan soal yang bervariasi untuk meningkatkan pemahaman.
+        - Menyediakan catatan kuliah yang mudah diakses untuk membantu dalam belajar.
+        - Membantu mempersiapkan diri untuk menghadapi UTS maupun UAS 
+        """)
+    
+    st.header("Fitur Utama")
+    st.write("""
+        - *Latihan Soal*: Pengguna dapat memilih mata kuliah dan menjawab soal-soal yang telah disediakan.
+        - *Catatan Kuliah*: Pengguna dapat mengakses catatan kuliah yang relevan dengan mata kuliah yang dipilih.
+    """)
+    
+    st.header("Tim Pengembang")
+    st.write("""
+        Aplikasi ini dikembangkan oleh:
+        - *Zulfikar Syahid.*
+        - *Rizmi Maitri Nurgianti.*
+        - *Nafisah Nailalhusna Isbandi.*
+        - *Jane Lazarina Bora Isu.*
+    """)
+    
+    st.header("Kontak")
+    st.write("""
+        Jika Anda memiliki pertanyaan atau masukan, silakan hubungi kami di:
+        - Email: zulfikarsyahid20@gmail.com
+    """)
+    
+    st.write("Terima kasih telah menggunakan MindTrack! Selamat belajar! 🎉")
