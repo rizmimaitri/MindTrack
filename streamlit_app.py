@@ -408,7 +408,7 @@ elif menu == "Responsi IPC":
                             embed_code = f'''
                             <iframe src="https://drive.google.com/file/d/{drive_id}/preview" width="800" height="480" allow="autoplay"></iframe>
                             '''
-                            components.html(embed_code, height=500)
+                            components.html(embed_code, height=500)                        
                         elif st.session_state.selected_pertemuan_responsi == 2:
                             # Tampilkan video di aplikasi Streamlit
                             drive_id = "13tNnytoo7KNzbNQ-L6LkMhR1uPXxk_nn"
