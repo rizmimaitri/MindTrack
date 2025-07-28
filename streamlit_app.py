@@ -188,7 +188,7 @@ elif menu == "Latihan Soal ✏️":
 # Catatan Kuliah
 elif menu == "Catatan Kuliah 📒":
     st.title("📒 Catatan Kuliah")
-    st.write("Untuk saat ini, catatan kuliah yang telah tersedia hanya untuk Prodi ANKIM Tingkat 1. Kami akan terus berupaya untuk menyediakan materi prodi lainnya. Jika Anda memiliki saran atau ingin berkontribusi dalam pengembangan materi, jangan ragu untuk menghubungi kami!")
+    st.write("Untuk saat ini, catatan kuliah yang telah tersedia hanya untuk Prodi ANKIM Tingkat 1. Kami akan terus berupaya menyediakan materi untuk prodi lainnya. Jika Anda memiliki saran atau ingin berkontribusi dalam pengembangan materi, jangan ragu untuk menghubungi kami!")
     # Inisialisasi mini memori
     if "selected_matkul_simple" not in st.session_state:
         st.session_state.selected_matkul_simple = None
