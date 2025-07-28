@@ -1,10 +1,11 @@
 import streamlit as st
+import streamlit.components.v1 as components
 
 # Konfigurasi halaman Streamlit
 st.set_page_config(page_title="MindTrack", page_icon="🧠")
 
 # Menu Sidebar
-menu = st.sidebar.selectbox("📚 Pilih Halaman", ["Beranda 🏠", "Latihan Soal ✏️", "Catatan Kuliah 📒", "Tentang ℹ️"])
+menu = st.sidebar.selectbox("📚 Pilih Halaman", ["Beranda 🏠", "Latihan Soal ✏️", "Catatan Kuliah 📒", "Responsi IPC", "Tentang ℹ️"])
 
 # Data Soal
 soal_data = {
@@ -122,7 +123,33 @@ materi_titles = {
     }
 }
 
-
+# Responsi IPC
+responsi_ipc_content = {
+    "ANKIM": { 
+        "UTS BLOK 2 SEMESTER 2": {
+            1: "Kimia Polimer Tingkat 2",
+            2: "Kimia Fisika Tingkat 1",
+            3: "Spektrofotometri Tingkat 1"
+        },
+        "UAS BLOK 2 SEMESTER 2": {
+            1: "Cominng Soon"
+        }
+    },
+    "PLI": { 
+        "UTS Blok 2 Senester 2": {
+            1: "Pengendalian Pencemaran Udara",
+            2: "Pengolahan Air dan Air Limbah"
+        },
+        "UAS Blok 2 Semesteer 2": {
+            1: "Coming Soon"
+        }
+    },
+    "PMIP": { 
+        "UAS BLOK 2 SEMESTER 2": {
+            1: "Comong Soon"
+        }
+    }
+}
 # Halaman Beranda
 if menu == "Beranda 🏠":
     st.title("🧠 MindTrack")
@@ -273,6 +300,137 @@ elif menu == "Catatan Kuliah 📒":
             st.info("Silakan pilih materi pertemuan di atas untuk melihat detail.")
     else:
         st.info("Silakan pilih mata kuliah di atas.")
+
+# Halman Responsi IPC
+elif menu == "Responsi IPC":
+    st.title("📝 Responsi IPC")
+    
+    # Inisialisasi session_state jika belum ada
+    if "selected_prodi_responsi" not in st.session_state:
+        st.session_state.selected_prodi_responsi = None
+    if "selected_matkul_responsi" not in st.session_state:
+        st.session_state.selected_matkul_responsi = None
+    if "selected_pertemuan_responsi" not in st.session_state:
+        st.session_state.selected_pertemuan_responsi = None
+    
+    # --- PILIH PROGRAM STUDI ---
+    prodi_options = list(responsi_ipc_content.keys())
+    selected_prodi = st.selectbox("Pilih Program Studi", prodi_options, key="prodi_dropdown_responsi")
+    
+    # Jika prodi dipilih (saat selectbox berubah)
+    if selected_prodi != st.session_state.selected_prodi_responsi:
+        st.session_state.selected_prodi_responsi = selected_prodi
+        st.session_state.selected_matkul_responsi = None # Reset matkul jika prodi berubah
+        st.session_state.selected_pertemuan_responsi = None # Reset pertemuan jika prodi berubah
+    
+    # Tampilkan dropdown Mata Kuliah hanya jika prodi sudah dipilih
+    if st.session_state.selected_prodi_responsi:
+        st.markdown("---")
+        st.subheader(f"Mata Kuliah untuk {st.session_state.selected_prodi_responsi}")
+    
+        matkul_options = list(responsi_ipc_content[st.session_state.selected_prodi_responsi].keys())
+        selected_matkul = st.selectbox("Pilih Mata Kuliah", matkul_options, key="matkul_dropdown_responsi")
+    
+        # Jika mata kuliah dipilih (saat selectbox berubah)
+        if selected_matkul != st.session_state.selected_matkul_responsi:
+            st.session_state.selected_matkul_responsi = selected_matkul
+            st.session_state.selected_pertemuan_responsi = None # Reset pertemuan jika matkul berubah
+    
+        # Tampilkan tombol materi pertemuan hanya jika mata kuliah sudah dipilih
+        if st.session_state.selected_matkul_responsi:
+            st.markdown("---")
+            st.subheader(f"Materi Responsi untuk {st.session_state.selected_matkul_responsi}")
+            st.write("Pilih Materi Pertemuan:")
+            
+            # Mendapatkan judul materi untuk mata kuliah yang sedang dipilih
+            current_pertemuan_titles = responsi_ipc_content[st.session_state.selected_prodi_responsi][st.session_state.selected_matkul_responsi]
+            
+            num_pertemuan = len(current_pertemuan_titles)
+            cols = st.columns(num_pertemuan if num_pertemuan > 0 else 1)
+    
+            sorted_pertemuan_nums = sorted(current_pertemuan_titles.keys()) 
+            
+            for idx, pertemuan_num in enumerate(sorted_pertemuan_nums):
+                with cols[idx]:
+                    button_label = current_pertemuan_titles.get(pertemuan_num, f"Pertemuan {pertemuan_num}")
+                    
+                    def set_pertemuan_responsi_callback(p_num):
+                        st.session_state.selected_pertemuan_responsi = p_num
+                    
+                    st.button(button_label, key=f"responsi_btn_{pertemuan_num}", on_click=set_pertemuan_responsi_callback, args=(pertemuan_num,))
+    
+            # Menampilkan Konten Responsi
+            if st.session_state.selected_pertemuan_responsi:
+                st.markdown("---")
+                konten_subheader_title = current_pertemuan_titles.get(st.session_state.selected_pertemuan_responsi, f"Konten Pertemuan {st.session_state.selected_pertemuan_responsi}")
+                st.subheader(f"Konten Responsi: {konten_subheader_title}")
+                st.write(f"Ini adalah detail responsi untuk **{st.session_state.selected_prodi_responsi}** - **{st.session_state.selected_matkul_responsi}** - **{konten_subheader_title}**.")
+                
+                #Konten Responsi IPC
+                if st.session_state.selected_prodi_responsi == "ANKIM":
+                    if st.session_state.selected_matkul_responsi == "UTS BLOK 2 SEMESTER 2":
+                        if st.session_state.selected_pertemuan_responsi == 1:
+                            # Tampilkan video di aplikasi Streamlit
+                            # Buat list ID video
+                                video_ids = [
+                                    ("Video Part 1", "1pg7TRHY-Q-BXBE4so7sC1MGISDsqva-Y"),
+                                    ("Video Part 2", "1upl1tdaTf7vvnrwo2TR7C65xT6t2b_k0")
+                                ]
+                                for title, drive_id in video_ids:
+                                    st.subheader(title)
+                                    embed_code = f'''
+                                    <iframe src="https://drive.google.com/file/d/{drive_id}/preview" width="800" height="480" allow="autoplay"></iframe>
+                                    '''
+                                    components.html(embed_code, height=500)
+
+                        elif st.session_state.selected_pertemuan_responsi == 2:
+                            # Tampilkan video di aplikasi Streamlit
+                            drive_id = "1AmOhnxyfGciJsw76j2ubdb9JFGgJxy2P"
+                            embed_code = f'''
+                            <iframe src="https://drive.google.com/file/d/{drive_id}/preview" width="800" height="480" allow="autoplay"></iframe>
+                            '''
+                            components.html(embed_code, height=500)
+                        elif st.session_state.selected_pertemuan_responsi == 3:
+                             # Tampilkan video di aplikasi Streamlit
+                            drive_id = "1L3xh09fkW0hmPgMgq89frHSPGvcA10Ra"
+                            embed_code = f'''
+                            <iframe src="https://drive.google.com/file/d/{drive_id}/preview" width="800" height="480" allow="autoplay"></iframe>
+                            '''
+                            components.html(embed_code, height=500)
+                    elif st.session_state.selected_matkul_responsi == "UAS BLOK 2 SEMESTER 2":
+                        if st.session_state.selected_pertemuan_responsi == 1:
+                            st.write("coming soon")
+                elif st.session_state.selected_prodi_responsi == "PLI":
+                    if st.session_state.selected_matkul_responsi == "UTS BLOK 2 SEMESTER 2":
+                        if st.session_state.selected_pertemuan_responsi == 1:
+                            # Tampilkan video di aplikasi Streamlit
+                            drive_id = "1T-dGbWVWi4Tv8a875U1f5Y9lk14R8XDm"
+                            embed_code = f'''
+                            <iframe src="https://drive.google.com/file/d/{drive_id}/preview" width="800" height="480" allow="autoplay"></iframe>
+                            '''
+                            components.html(embed_code, height=500)
+                        elif st.session_state.selected_pertemuan_responsi == 2:
+                            # Tampilkan video di aplikasi Streamlit
+                            drive_id = "13tNnytoo7KNzbNQ-L6LkMhR1uPXxk_nn"
+                            embed_code = f'''
+                            <iframe src="https://drive.google.com/file/d/{drive_id}/preview" width="800" height="480" allow="autoplay"></iframe>
+                            '''
+                            components.html(embed_code, height=500)
+                    elif st.session_state.selected_matkul_responsi == "UAS BLOK 2 SEMESTER 2":
+                        if st.session_state.selected_pertemuan_responsi == 1:
+                            st.write("coming soon")
+                elif st.session_state.selected_prodi_responsi == "PMIP":
+                    if st.session_state.selected_matkul_responsi == "UAS BLOK 2 SEMESTER 2":
+                        if st.session_state.selected_pertemuan_responsi == 1:
+                            st.write("coming soon")
+                else:
+                    st.info("Konten untuk prodi/mata kuliah/pertemuan ini belum tersedia.")
+            else:
+                st.info("Silakan pilih materi pertemuan di atas untuk melihat detail responsi.")
+        else:
+            st.info("Silakan pilih mata kuliah di atas.")
+    else:
+        st.info("Silakan pilih program studi di atas.")
 
 # Halaman Tentang
 elif menu == "Tentang ℹ️":
