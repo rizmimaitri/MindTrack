@@ -434,8 +434,9 @@ elif menu == "Responsi IPC":
 # Halaman Tentang
 elif menu == "Tentang ℹ️":
     st.title("ℹ️Tentang MindTrack")
-    st.write("MindTrack adalah sebuah web yang dirancang untuk membantu mahasiswa khusunya di lingkungan Politeiknik AKA Bogor dalam memahami konsep-konsep penting di mata kuliah teori.")
-    
+    st.write("MindTrack adalah sebuah platform web yang dirancang untuk membantu mahasiswa, khususnya di lingkungan Politeknik AKA Bogor, dalam memahami konsep-konsep penting pada mata kuliah teori. Web ini berawal dari proyek pengembangan aplikasi dalam mata kuliah LPK.")
+    st.write("Setelah dipresentasikan dan mendapatkan berbagai masukan dari rekan-rekan mahasiswa, kami melihat potensi besar untuk memperluas cakupan materi yang disajikan. Sejak saat itu, MindTrack menjalin kerja sama dengan Komunitas IPC, sebuah komunitas yang aktif mengadakan kegiatan responsi (belajar bersama) untuk mempersiapkan diri dalam menghadapi UTS, UAS, bahkan Remedial.")
+    st.write("Kolaborasi ini mendorong pengembangan konten yang lebih kaya dan sesuai dengan kebutuhan mahasiswa. Dengan adanya kolaborasi ini, kami berharap semoga MindTrack dapat terus berupaya menjadi platform pembelajaran yang lebih bermanfaat dan relevan bagi seluruh mahasiswa di lingkungan Politeknik AKA Bogor.")
     st.header("Tujuan Aplikasi")
     st.write("""
         Aplikasi ini bertujuan untuk:
@@ -448,7 +449,7 @@ elif menu == "Tentang ℹ️":
     st.write("""
         - *Latihan Soal*: Pengguna dapat memilih mata kuliah dan menjawab soal-soal yang telah disediakan.
         - *Catatan Kuliah*: Pengguna dapat mengakses catatan kuliah yang relevan dengan mata kuliah yang dipilih.
-    """)
+        - *Responsi IPC*: Bagian khusus yang dikembangkan secara kolaboratif bersama Komunitas IPC, Fitur ini secara spesifik dirancang untuk mendukung kegiatan belajar bersama yang diadakan oleh komunitas.
     
     st.header("Tim Pengembang")
     st.write("""
