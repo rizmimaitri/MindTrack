@@ -468,6 +468,6 @@ elif menu == "Tentang ℹ️":
     st.write("""
         Jika Anda memiliki pertanyaan atau masukan, silakan hubungi kami di:
         - Email: zulfikarsyahid20@gmail.com
-    """)
+        """)
     
     st.write("Terima kasih telah menggunakan MindTrack! Selamat belajar! 🎉")
