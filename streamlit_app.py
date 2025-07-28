@@ -450,6 +450,7 @@ elif menu == "Tentang ℹ️":
         - *Latihan Soal*: Pengguna dapat memilih mata kuliah dan menjawab soal-soal yang telah disediakan.
         - *Catatan Kuliah*: Pengguna dapat mengakses catatan kuliah yang relevan dengan mata kuliah yang dipilih.
         - *Responsi IPC*: Bagian khusus yang dikembangkan secara kolaboratif bersama Komunitas IPC, Fitur ini secara spesifik dirancang untuk mendukung kegiatan belajar bersama yang diadakan oleh komunitas.
+        """)
     
     st.header("Tim Pengembang")
     st.write("""
