@@ -371,7 +371,6 @@ elif menu == "Responsi IPC":
                     if st.session_state.selected_matkul_responsi == "UTS BLOK 2 SEMESTER 2":
                         if st.session_state.selected_pertemuan_responsi == 1:
                             # Tampilkan video di aplikasi Streamlit
-                            # Buat list ID video
                                 video_ids = [
                                     ("Video Part 1", "1pg7TRHY-Q-BXBE4so7sC1MGISDsqva-Y"),
                                     ("Video Part 2", "1upl1tdaTf7vvnrwo2TR7C65xT6t2b_k0")
@@ -404,11 +403,11 @@ elif menu == "Responsi IPC":
                     if st.session_state.selected_matkul_responsi == "UTS BLOK 2 SEMESTER 2":
                         if st.session_state.selected_pertemuan_responsi == 1:
                             # Tampilkan video di aplikasi Streamlit
-                            drive_id = "1T-dGbWVWi4Tv8a875U1f5Y9lk14R8XDm"
+                            drive_id = "1T-dGbWVWi4Tv8a875U1f5Y9lk14R8XDm"  # huruf besar kecil benar
                             embed_code = f'''
                             <iframe src="https://drive.google.com/file/d/{drive_id}/preview" width="800" height="480" allow="autoplay"></iframe>
                             '''
-                            components.html(embed_code, height=500)                        
+                            components.html(embed_code, height=500)                    
                         elif st.session_state.selected_pertemuan_responsi == 2:
                             # Tampilkan video di aplikasi Streamlit
                             drive_id = "13tNnytoo7KNzbNQ-L6LkMhR1uPXxk_nn"
